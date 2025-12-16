@@ -1,0 +1,10 @@
+@use "../helpers/variables/colors";
+
+::selection {
+  background-color: colors.$gold;
+  color: colors.$white;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

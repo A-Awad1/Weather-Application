@@ -1,0 +1,39 @@
+@mixin xSmall {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+@mixin small {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin xLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin xxLarge {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+/*
+// large Height
+@mixin largeHeight {
+  @media (min-height: 1000px) {
+    @content;
+  }
+}
+*/

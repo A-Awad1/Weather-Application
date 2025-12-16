@@ -1,0 +1,32 @@
+%center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%column-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+%wrap-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: inherit;
+}
+%ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

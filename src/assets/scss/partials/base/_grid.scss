@@ -1,0 +1,28 @@
+@use "../helpers/mixins/responsive" as *;
+
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  width: 100%;
+  @include small {
+    max-width: 540px;
+  }
+  @include medium {
+    max-width: 720px;
+  }
+  @include large {
+    max-width: 960px;
+  }
+  @include xLarge {
+    max-width: 1140px;
+  }
+  @include xxLarge {
+    max-width: 1320px;
+  }
+}

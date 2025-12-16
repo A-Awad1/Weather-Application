@@ -1,0 +1,29 @@
+@use "../helpers/variables/colors";
+
+html {
+  scroll-behavior: smooth;
+}
+
+$scroll: "::-webkit-scrollbar";
+#{$scroll} {
+  width: 7px;
+  height: 7px;
+}
+#{$scroll}-track {
+  background-color: colors.$dark-blue;
+}
+#{$scroll}-thumb {
+  cursor: move;
+  border-radius: 8px;
+  background-color: colors.$light-blue;
+  &:hover {
+    background-color: colors.$light-blue;
+  }
+}
+
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: colors.$light-blue colors.$dark-blue;
+  }
+}
