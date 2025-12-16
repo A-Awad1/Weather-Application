@@ -34,7 +34,7 @@ This project is a web application challenge from [Frontend Mentor](https://www.f
 - ESLint
 - Mobile-First Design
 
-### API setup
+## API setup
 
 This project uses the [Open-Meteo API](https://open-meteo.com/) to fetch weather data.
 
@@ -57,7 +57,7 @@ This project uses the [Open-Meteo API](https://open-meteo.com/) to fetch weather
 
 Choose your preferred package manager (**npm**, **pnpm**, **yarn** or **bun**)
 
-### installs dependencies
+### Installs Dependencies
 
 ```bash
 # npm
