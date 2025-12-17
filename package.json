@@ -11,9 +11,11 @@
     "deploy": "netlify deploy --prod"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
     "normalize.css": "^8.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
     "sass": "^1.96.0"
   },
   "devDependencies": {
