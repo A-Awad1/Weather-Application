@@ -1,10 +1,11 @@
 import DropDown from "./DropDown";
+import "./index.scss";
 
 export default function AppHeader() {
   return (
-    <header>
+    <header className="App-Header">
       <img src="/images/logo.svg" alt="app logo" />
-      <DropDown />
+      {/* <DropDown /> */}
     </header>
   );
 }

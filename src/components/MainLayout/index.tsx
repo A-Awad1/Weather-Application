@@ -1,5 +1,5 @@
 import AppHeader from "../AppHeader";
-import "./style.scss";
+import "./index.scss";
 
 export default function MainLayout() {
   return (
