@@ -1,12 +1,5 @@
-import AppHeader from "./components/AppHeader";
-import "./App.scss";
+import MainLayout from "./components/MainLayout";
 
 export default function App() {
-  return (
-    <section className="layout">
-      <div className="container">
-        <AppHeader />
-      </div>
-    </section>
-  );
+  return <MainLayout />;
 }
