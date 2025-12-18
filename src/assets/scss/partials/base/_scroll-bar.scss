@@ -10,20 +10,20 @@ $scroll: "::-webkit-scrollbar";
   height: 7px;
 }
 #{$scroll}-track {
-  background-color: colors.$dark-blue;
+  background-color: colors.$blue-base;
 }
 #{$scroll}-thumb {
   cursor: move;
   border-radius: 8px;
-  background-color: colors.$light-blue;
+  background-color: colors.$blue-light;
   &:hover {
-    background-color: colors.$light-blue;
+    background-color: colors.$blue-light;
   }
 }
 
 @supports (-moz-appearance: none) {
   html {
     scrollbar-width: thin;
-    scrollbar-color: colors.$light-blue colors.$dark-blue;
+    scrollbar-color: colors.$blue-light colors.$blue-base;
   }
 }

@@ -1,9 +1,12 @@
 import AppHeader from "./components/AppHeader";
+import "./App.scss";
 
 export default function App() {
   return (
     <section className="layout">
-      <AppHeader />
+      <div className="container">
+        <AppHeader />
+      </div>
     </section>
   );
 }
