@@ -9,3 +9,10 @@ export interface Unit {
 }
 
 export type UnitPayload = { [K in keyof Unit]: { key: K; value: Unit[K] } }[keyof Unit];
+
+export interface MenuOption {
+  text: string;
+  id: string;
+  name: keyof Unit;
+  value: Unit[keyof Unit];
+}
