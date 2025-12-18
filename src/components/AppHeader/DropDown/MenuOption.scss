@@ -1,0 +1,31 @@
+li.menu-option {
+  display: flex;
+  position: relative;
+  label {
+    flex: 1;
+    cursor: pointer;
+    border-radius: $third-border-radius;
+    transition: background-color $main-transition;
+    padding: 8px 6px;
+  }
+  img {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
+  input {
+    display: none;
+    &:checked {
+      ~ {
+        label {
+          background-color: colors.$second-bg;
+        }
+        img {
+          display: flex;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@use "../variables/colors";
+
+@mixin focus-shadow($out: colors.$white, $in: colors.$blue-dark, $width: 2) {
+  box-shadow: inset 0px 0px 0px 3px $in, 0px 0px 0px #{$width}px $out;
+}

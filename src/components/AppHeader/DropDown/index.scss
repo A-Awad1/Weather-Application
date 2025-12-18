@@ -1,0 +1,33 @@
+div.drop-down {
+  position: relative;
+  > button.head {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    padding: 11px 14px;
+    border-radius: $second-border-radius;
+    transition: background-color $main-transition;
+    background-color: colors.$main-bg;
+    &:hover {
+      background-color: colors.$second-bg;
+    }
+    &:focus {
+      background-color: colors.$second-bg;
+      @include focus-shadow();
+    }
+    span {
+      text-transform: capitalize;
+    }
+    img {
+      &.gear-icon {
+        width: 18px;
+      }
+      &.arrow-icon {
+        width: 14px;
+      }
+    }
+  }
+}

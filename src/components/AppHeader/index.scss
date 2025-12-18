@@ -1,3 +1,16 @@
 header.App-Header {
-  display: flex;
+  @extend %between-flex;
+  gap: 15px;
+  > img {
+    height: 31px;
+    @include medium {
+      height: 33px;
+    }
+    @include large {
+      height: 35px;
+    }
+    @include xxLarge {
+      height: 37px;
+    }
+  }
 }

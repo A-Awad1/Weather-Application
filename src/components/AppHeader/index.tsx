@@ -5,7 +5,7 @@ export default function AppHeader() {
   return (
     <header className="App-Header">
       <img src="/images/logo.svg" alt="app logo" />
-      {/* <DropDown /> */}
+      <DropDown />
     </header>
   );
 }

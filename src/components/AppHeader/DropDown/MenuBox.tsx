@@ -1,9 +1,10 @@
-import type { RootState } from "../../store/index";
 import type { FormEvent } from "react";
-import type { MenuOption as Props } from "~/types";
 import { useSelector, useDispatch } from "react-redux";
-import { changeAllUnits } from "../../store/slices/units";
+import type { MenuOption as Props } from "~/types";
+import type { RootState } from "~/store/index";
+import { changeAllUnits } from "~/store/slices/units";
 import MenuOption from "./MenuOption";
+import "./MenuBox.scss";
 
 const options: Record<string, Props> = {
   "temp-celsius": {
@@ -44,25 +45,21 @@ const options: Record<string, Props> = {
   },
 };
 
-export default function HeaderMenu() {
+export default function MenuBox() {
   const units = useSelector((state: RootState) => state.units);
   const dispatch = useDispatch();
-
   function switchAll(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     dispatch(changeAllUnits());
   }
 
   return (
-    <div className="drop-down">
-      <div className="head">
-        <img src="/images/icon-units.svg" alt="settings icon" />
-        <span>units</span>
-        <img src="/images/icon-dropdown.svg" alt="down arrow" />
-      </div>
-      <div className="menu">
-        <form onSubmit={switchAll}>
-          <button>switch to {units.toggleTo}</button>
+    <div className="menu-box">
+      <form onSubmit={switchAll}>
+        <button>
+          Switch to <span>{units.toggleTo}</span>
+        </button>
+        <section>
           <div>
             <span>temperature</span>
             <ul>
@@ -84,8 +81,8 @@ export default function HeaderMenu() {
               <MenuOption {...options["precipit-in"]} />
             </ul>
           </div>
-        </form>
-      </div>
+        </section>
+      </form>
     </div>
   );
 }
