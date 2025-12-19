@@ -6,14 +6,20 @@ li.menu-option {
     cursor: pointer;
     border-radius: $third-border-radius;
     transition: background-color $main-transition;
-    padding: 8px 6px;
+    padding: 7px 5px;
+    @include medium {
+      padding: 8px 6px;
+    }
   }
   img {
     position: absolute;
-    right: 6px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    right: 5px;
+    @include medium {
+      right: 6px;
+    }
   }
   input {
     display: none;

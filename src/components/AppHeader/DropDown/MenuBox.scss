@@ -1,25 +1,33 @@
 div.menu-box {
   position: absolute;
   right: 0;
-  top: calc(100% + 8px);
-  width: 200px;
-  padding: 4px 7px;
   background-color: colors.$main-bg;
   border-radius: $second-border-radius;
   box-shadow: 0px 0px 2px 2px colors.$second-bg;
   white-space: nowrap;
   user-select: none;
+  top: calc(100% + 6px);
+  width: 180px;
+  padding: 3px 5px;
+  @include medium {
+    top: calc(100% + 8px);
+    width: 200px;
+    padding: 4px 7px;
+  }
   > form {
     display: flex;
     flex-direction: column;
     > button {
       border: none;
       background-color: transparent;
-      padding: 8px 6px;
       border-radius: $third-border-radius;
       transition: background-color $main-transition;
       cursor: pointer;
       text-align: start;
+      padding: 7px 5px;
+      @include medium {
+        padding: 8px 6px;
+      }
       &:hover {
         background-color: colors.$second-bg;
       }
@@ -34,29 +42,44 @@ div.menu-box {
     > section {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+      @include medium {
+        gap: 8px;
+      }
       > div {
         display: flex;
         flex-direction: column;
-        gap: 2px;
         position: relative;
+        gap: 1px;
+        @include medium {
+          gap: 2px;
+        }
         &:not(:last-of-type)::after {
           content: "";
           position: absolute;
+          background-color: colors.$second-bg;
           height: 2px;
           width: 100%;
-          background-color: colors.$second-bg;
-          bottom: -4px;
+          bottom: -2px;
+          @include medium {
+            bottom: -4px;
+          }
         }
         > span {
           text-transform: capitalize;
           color: colors.$third-text;
-          padding: 8px 6px;
+          padding: 7px 5px;
+          @include medium {
+            padding: 8px 6px;
+          }
         }
         > ul {
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 1px;
+          @include medium {
+            gap: 2px;
+          }
         }
       }
     }

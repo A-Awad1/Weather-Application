@@ -2,7 +2,7 @@ header.App-Header {
   @extend %between-flex;
   gap: 15px;
   > img {
-    height: 31px;
+    height: 30px;
     @include medium {
       height: 33px;
     }

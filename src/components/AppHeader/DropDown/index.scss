@@ -6,11 +6,15 @@ div.drop-down {
     user-select: none;
     cursor: pointer;
     border: none;
-    gap: 8px;
-    padding: 11px 14px;
     border-radius: $second-border-radius;
     transition: background-color $main-transition;
     background-color: colors.$main-bg;
+    gap: 5px;
+    padding: 9px 12px;
+    @include medium {
+      gap: 8px;
+      padding: 11px 14px;
+    }
     &:hover {
       background-color: colors.$second-bg;
     }
@@ -23,10 +27,16 @@ div.drop-down {
     }
     img {
       &.gear-icon {
-        width: 18px;
+        width: 16px;
+        @include medium {
+          width: 18px;
+        }
       }
       &.arrow-icon {
-        width: 14px;
+        width: 12px;
+        @include medium {
+          width: 14px;
+        }
       }
     }
   }
