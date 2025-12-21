@@ -7,7 +7,7 @@ div.drop-down {
     cursor: pointer;
     border: none;
     border-radius: $second-border-radius;
-    transition: background-color $main-transition;
+    transition: $main-transition;
     background-color: colors.$main-bg;
     gap: 5px;
     padding: 9px 12px;

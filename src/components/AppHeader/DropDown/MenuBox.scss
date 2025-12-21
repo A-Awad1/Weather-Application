@@ -20,7 +20,7 @@ div.menu-box {
       border: none;
       background-color: transparent;
       border-radius: $third-border-radius;
-      transition: background-color $main-transition;
+      transition: $main-transition;
       cursor: pointer;
       text-align: start;
       padding: 7px 5px;

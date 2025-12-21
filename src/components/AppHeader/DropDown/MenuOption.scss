@@ -5,7 +5,7 @@ li.menu-option {
     flex: 1;
     cursor: pointer;
     border-radius: $third-border-radius;
-    transition: background-color $main-transition;
+    transition: $main-transition;
     padding: 7px 5px;
     @include medium {
       padding: 8px 6px;

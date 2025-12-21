@@ -47,7 +47,7 @@ section.connect-failed {
       border: none;
       text-transform: capitalize;
       cursor: pointer;
-      transition: background-color $main-transition;
+      transition: $main-transition;
       padding: 8px 10px;
       gap: 6px;
       &:hover {

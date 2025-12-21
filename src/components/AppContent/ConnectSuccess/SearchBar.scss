@@ -1,0 +1,79 @@
+section.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+  @include xSmall {
+    justify-content: center;
+  }
+  @include medium {
+    margin-bottom: 25px;
+  }
+  > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include xSmall {
+      width: auto;
+      flex-direction: row;
+    }
+    @include medium {
+      gap: 10px;
+    }
+    div.input-container {
+      display: flex;
+      border-radius: $second-border-radius;
+      background-color: colors.$main-bg;
+      transition: $main-transition;
+      &:hover {
+        background-color: colors.$second-bg;
+      }
+      &:focus-within {
+        @include focus-shadow();
+      }
+      label {
+        @extend %center-flex;
+        padding-left: 15px;
+        img {
+          width: 17px;
+        }
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        flex: 1;
+        padding: 11px 9px;
+        @include xSmall {
+          width: 220px;
+        }
+        @include small {
+          width: 270px;
+        }
+        @include medium {
+          width: 300px;
+        }
+        @include large {
+          width: 350px;
+        }
+        &::placeholder {
+          color: colors.$third-text;
+        }
+      }
+    }
+    button {
+      border: none;
+      border-radius: $second-border-radius;
+      text-transform: capitalize;
+      transition: $main-transition;
+      cursor: pointer;
+      color: colors.$second-text;
+      background-color: colors.$blue-light;
+      padding: 10px 15px;
+      &:hover {
+        background-color: colors.$blue-base;
+      }
+      &:focus {
+        @include focus-shadow(colors.$blue-light, colors.$blue-dark, 1);
+      }
+    }
+  }
+}
