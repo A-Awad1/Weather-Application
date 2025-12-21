@@ -1,5 +1,5 @@
+import AppContent from "../AppContent";
 import AppHeader from "../AppHeader";
-import MainHeading from "../MainHeading";
 import "./index.scss";
 
 export default function MainLayout() {
@@ -7,7 +7,7 @@ export default function MainLayout() {
     <section className="layout">
       <div className="container">
         <AppHeader />
-        <MainHeading />
+        <AppContent />
       </div>
     </section>
   );

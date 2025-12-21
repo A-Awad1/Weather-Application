@@ -1,0 +1,64 @@
+section.connect-failed {
+  display: flex;
+  justify-content: center;
+  > div {
+    @extend %column-flex;
+    text-align: center;
+    gap: 15px;
+    padding: 5px {
+      top: 65px;
+    }
+    @include xSmall {
+      width: min-content;
+      gap: 20px;
+    }
+    @include medium {
+      gap: 25px;
+      padding-top: 75px;
+    }
+    > img {
+      width: 30px;
+      @include medium {
+        width: 35px;
+      }
+    }
+    h2 {
+      font-size: 2.4rem;
+      @include xSmall {
+        white-space: nowrap;
+      }
+    }
+    p {
+      font-size: 1.1rem;
+      color: colors.$third-text;
+      line-height: 1.2;
+      padding: 0 5px;
+      @include medium {
+        padding: 0 10px;
+      }
+    }
+    button {
+      @extend %center-flex;
+      background-color: colors.$main-bg;
+      border-radius: $third-border-radius;
+      border: none;
+      text-transform: capitalize;
+      cursor: pointer;
+      transition: background-color $main-transition;
+      padding: 8px 10px;
+      gap: 6px;
+      &:hover {
+        background-color: colors.$second-bg;
+      }
+      &:focus {
+        @include focus-shadow();
+      }
+      img {
+        height: 11px;
+        @include medium {
+          height: 13px;
+        }
+      }
+    }
+  }
+}
