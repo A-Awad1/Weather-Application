@@ -23,7 +23,10 @@ section.connect-failed {
       }
     }
     h2 {
-      font-size: 2.4rem;
+      font: {
+        size: 2.4rem;
+        family: $second-font;
+      }
       @include xSmall {
         white-space: nowrap;
       }

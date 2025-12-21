@@ -1,12 +1,11 @@
 section.connect-success {
   h2 {
-    color: colors.$second-text;
     width: fit-content;
     text-align: center;
     margin: 40px auto 30px;
     font: {
-      family: $second-font;
       size: 2.4rem;
+      family: $second-font;
     }
   }
 }
