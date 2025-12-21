@@ -24,9 +24,9 @@ export default function HeaderMenu() {
   return (
     <div className="drop-down" ref={dropDownRef}>
       <button className="head" onClick={toggleMenu}>
-        <img className="gear-icon" src="/images/icon-units.svg" alt="settings icon" />
+        <img className="gear-icon" src="/general-icons/icon-units.svg" alt="settings icon" />
         <span>units</span>
-        <img className="arrow-icon" src="/images/icon-dropdown.svg" alt="down arrow" />
+        <img className="arrow-icon" src="/general-icons/icon-dropdown.svg" alt="down arrow" />
       </button>
       <Activity mode={showMenu ? "visible" : "hidden"}>
         <MenuBox />

@@ -11,7 +11,7 @@ export default function SearchBar() {
       <form>
         <div className="input-container">
           <label htmlFor="search-input">
-            <img src="/images/icon-search.svg" alt="icon search" />
+            <img src="/general-icons/icon-search.svg" alt="icon search" />
           </label>
           <input id="search-input" type="text" placeholder="Search for a city..." />
         </div>

@@ -27,7 +27,7 @@ export default function MenuOptions({ text, name, id, value }: MenuOption) {
         onChange={switchUnit}
       />
       <label htmlFor={id}>{text}</label>
-      <img src="images/icon-checkmark.svg" alt="check mark" key={value} />
+      <img src="/general-icons/icon-checkmark.svg" alt="check mark" key={value} />
     </li>
   );
 }

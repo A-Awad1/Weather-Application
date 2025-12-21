@@ -1,14 +1,23 @@
 section.connect-success {
-  h2 {
-    width: fit-content;
-    text-align: center;
-    margin: 35px auto 25px;
-    @include medium {
-      margin: 40px auto 30px;
+  > {
+    h2 {
+      width: fit-content;
+      text-align: center;
+      margin: 35px auto 25px;
+      @include medium {
+        margin: 40px auto 30px;
+      }
+      font: {
+        size: 2.4rem;
+        family: $second-font;
+      }
     }
-    font: {
-      size: 2.4rem;
-      family: $second-font;
+    div.result-info {
+      border: 1px solid red;
+      display: flex;
+      > div:first-child {
+        flex: 1;
+      }
     }
   }
 }
