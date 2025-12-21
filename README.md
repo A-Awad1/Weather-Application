@@ -1,6 +1,6 @@
 # Weather Application
 
-**Project Progress : [░░░░░░░░░░] 0%**
+**The Project in Progress [░░░░░░░░░░]**
 
 <!--
 ## Deployment Link
