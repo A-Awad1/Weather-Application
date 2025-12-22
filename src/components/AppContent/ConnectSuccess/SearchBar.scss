@@ -58,7 +58,7 @@ section.search-bar {
           width: 350px;
         }
         &::placeholder {
-          color: colors.$third-text;
+          color: colors.$second-text;
         }
       }
     }
@@ -68,7 +68,6 @@ section.search-bar {
       text-transform: capitalize;
       transition: $main-transition;
       cursor: pointer;
-      color: colors.$second-text;
       background-color: colors.$blue-light;
       padding: 10px 15px;
       &:hover {

@@ -28,7 +28,7 @@ section.current-info {
             }
           }
           span.date {
-            color: colors.$third-text;
+            color: colors.$second-text;
           }
         }
         &:last-of-type {
@@ -59,7 +59,7 @@ section.current-info {
         flex-direction: column;
         gap: inherit;
         > h4 {
-          color: colors.$third-text;
+          color: colors.$second-text;
           text-transform: capitalize;
           font-weight: 500;
         }

@@ -21,7 +21,7 @@ article.daily-forecast {
         gap: inherit;
         h4 {
           text-transform: capitalize;
-          color: colors.$third-text;
+          color: colors.$second-text;
         }
         img {
           height: 45px;
@@ -33,7 +33,7 @@ article.daily-forecast {
           span {
             font-size: 0.9rem;
             &:last-of-type {
-              color: colors.$third-text;
+              color: colors.$second-text;
             }
           }
         }
