@@ -24,6 +24,7 @@ section.search-bar {
       border-radius: $second-border-radius;
       background-color: colors.$main-bg;
       transition: $main-transition;
+      cursor: pointer;
       &:hover {
         background-color: colors.$second-bg;
       }
@@ -33,11 +34,13 @@ section.search-bar {
       label {
         @extend %center-flex;
         padding-left: 15px;
+        cursor: inherit;
         img {
           width: 17px;
         }
       }
       input {
+        cursor: inherit;
         background-color: transparent;
         border: none;
         flex: 1;

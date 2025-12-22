@@ -9,8 +9,5 @@ header.App-Header {
     @include large {
       height: 35px;
     }
-    @include xxLarge {
-      height: 37px;
-    }
   }
 }

@@ -6,24 +6,23 @@ html {
 
 $scroll: "::-webkit-scrollbar";
 #{$scroll} {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
 #{$scroll}-track {
-  background-color: colors.$blue-base;
+  background-color: transparent;
 }
 #{$scroll}-thumb {
   cursor: move;
-  border-radius: 8px;
-  background-color: colors.$blue-light;
+  background-color: colors.$second-bg;
   &:hover {
-    background-color: colors.$blue-light;
+    background-color: colors.$second-bg;
   }
 }
 
 @supports (-moz-appearance: none) {
   html {
     scrollbar-width: thin;
-    scrollbar-color: colors.$blue-light colors.$blue-base;
+    scrollbar-color: colors.$second-bg transparent;
   }
 }

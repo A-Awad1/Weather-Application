@@ -1,0 +1,69 @@
+div.days-select {
+  position: relative;
+  > button {
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    border-radius: $second-border-radius;
+    transition: $main-transition;
+    background-color: colors.$second-bg;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    @include medium {
+      gap: 8px;
+      padding: 9px 14px;
+    }
+    &:focus {
+      @include focus-shadow(colors.$white, transparent, 1);
+    }
+    span {
+      text-transform: capitalize;
+      font-size: 0.95rem;
+    }
+    img {
+      &.gear-icon {
+        width: 14px;
+        @include medium {
+          width: 16px;
+        }
+      }
+      &.arrow-icon {
+        width: 11px;
+        @include medium {
+          width: 12px;
+        }
+      }
+    }
+  }
+  > ul {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background-color: colors.$main-bg;
+    border-radius: $second-border-radius;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 160px;
+    @include main-shadow();
+    > li {
+      user-select: none;
+      border-radius: $third-border-radius;
+      transition: $main-transition;
+      text-transform: capitalize;
+      cursor: pointer;
+      padding: 7px 5px;
+      @include medium {
+        padding: 8px 6px;
+      }
+      &.selected,
+      &:hover {
+        background-color: colors.$second-bg;
+      }
+    }
+  }
+}

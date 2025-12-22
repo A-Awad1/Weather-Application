@@ -1,0 +1,72 @@
+section.current-info {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  > article {
+    &.main-info {
+      height: 245px;
+      padding: 15px;
+      border-radius: $main-border-radius;
+      overflow: hidden;
+      @extend %between-flex;
+      gap: inherit;
+      background: {
+        image: url(/bg-today-large.svg);
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+      }
+      > div {
+        display: flex;
+        &:first-of-type {
+          flex-direction: column;
+          gap: 6px;
+          span.location {
+            font: {
+              size: 1.7rem;
+              weight: 700;
+            }
+          }
+          span.date {
+            color: colors.$third-text;
+          }
+        }
+        &:last-of-type {
+          align-items: center;
+          gap: inherit;
+          img {
+            height: 110px;
+          }
+          span {
+            font: {
+              style: italic;
+              weight: 700;
+              size: 5.5rem;
+            }
+          }
+        }
+      }
+    }
+    &.detailed-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: inherit;
+      > div {
+        background-color: colors.$main-bg;
+        border-radius: $main-border-radius;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: inherit;
+        > h4 {
+          color: colors.$third-text;
+          text-transform: capitalize;
+          font-weight: 500;
+        }
+        > span {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

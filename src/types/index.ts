@@ -16,3 +16,12 @@ export interface MenuOption {
   name: keyof Unit;
   value: Unit[keyof Unit];
 }
+
+export type WeekDay =
+  | "saturday"
+  | "sunday"
+  | "monday"
+  | "tuesday"
+  | "wednesday"
+  | "thursday"
+  | "friday";

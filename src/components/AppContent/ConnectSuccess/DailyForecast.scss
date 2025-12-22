@@ -1,0 +1,43 @@
+article.daily-forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  > {
+    h3 {
+      font: {
+        size: 1.1rem;
+        weight: 500;
+      }
+    }
+    div {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: inherit;
+      > div {
+        border-radius: $second-border-radius;
+        background-color: colors.$main-bg;
+        padding: 11px 9px;
+        @extend %column-flex;
+        gap: inherit;
+        h4 {
+          text-transform: capitalize;
+          color: colors.$third-text;
+        }
+        img {
+          height: 45px;
+        }
+        div {
+          align-self: stretch;
+          @extend %between-flex;
+          gap: 5px;
+          span {
+            font-size: 0.9rem;
+            &:last-of-type {
+              color: colors.$third-text;
+            }
+          }
+        }
+      }
+    }
+  }
+}

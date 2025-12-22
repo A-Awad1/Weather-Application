@@ -3,12 +3,12 @@ div.menu-box {
   right: 0;
   background-color: colors.$main-bg;
   border-radius: $second-border-radius;
-  box-shadow: 0px 0px 2px 2px colors.$second-bg;
   white-space: nowrap;
   user-select: none;
   top: calc(100% + 8px);
   width: 180px;
   padding: 3px 5px;
+  @include main-shadow();
   @include medium {
     width: 200px;
     padding: 4px 7px;

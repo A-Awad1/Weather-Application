@@ -1,4 +1,5 @@
 div.drop-down {
+  z-index: 2;
   position: relative;
   > button.head {
     display: flex;
@@ -11,6 +12,7 @@ div.drop-down {
     background-color: colors.$main-bg;
     gap: 5px;
     padding: 9px 12px;
+    font-size: 0.95rem;
     @include medium {
       gap: 8px;
       padding: 11px 14px;
@@ -33,9 +35,9 @@ div.drop-down {
         }
       }
       &.arrow-icon {
-        width: 12px;
+        width: 11px;
         @include medium {
-          width: 14px;
+          width: 12px;
         }
       }
     }
