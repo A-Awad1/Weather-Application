@@ -7,7 +7,7 @@ div.menu-box {
   user-select: none;
   top: calc(100% + 8px);
   width: 180px;
-  padding: 3px 5px;
+  padding: 4px 5px;
   @include main-shadow();
   @include medium {
     width: 200px;
@@ -59,10 +59,7 @@ div.menu-box {
           background-color: colors.$second-bg;
           height: 2px;
           width: 100%;
-          bottom: -2px;
-          @include medium {
-            bottom: -4px;
-          }
+          bottom: -4px;
         }
         > span {
           text-transform: capitalize;

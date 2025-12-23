@@ -8,10 +8,7 @@ div.container {
 }
 
 html {
-  font-size: 13px;
-  @include small {
-    font-size: 14px;
-  }
+  font-size: 14px;
   @include medium {
     font-size: 15px;
   }
