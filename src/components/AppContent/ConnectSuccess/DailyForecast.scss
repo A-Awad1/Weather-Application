@@ -17,6 +17,7 @@ article.daily-forecast {
         border-radius: $second-border-radius;
         background-color: colors.$main-bg;
         padding: 11px 9px;
+        @include main-shadow();
         @extend %column-flex;
         gap: inherit;
         h4 {

@@ -1,7 +1,7 @@
 @use "../variables/colors";
 
-@mixin main-shadow($color: colors.$second-bg) {
-  box-shadow: 0px 0px 2px 2px $color;
+@mixin main-shadow($size: 1) {
+  box-shadow: 0 0 #{$size}px #{$size}px colors.$shadow;
 }
 
 @mixin focus-shadow($out: colors.$white, $in: colors.$blue-dark, $width: 2) {

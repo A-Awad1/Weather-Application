@@ -23,7 +23,7 @@ article.hourly-forecast {
     > div {
       position: absolute;
       width: 100%;
-      padding: 0 15px;
+      padding: 1px 15px;
       display: flex;
       flex-direction: column;
       gap: 11px;
@@ -34,6 +34,7 @@ article.hourly-forecast {
         align-items: center;
         padding: 7px 8px;
         gap: 5px;
+        @include main-shadow(1);
         img {
           width: 34px;
         }

@@ -58,6 +58,7 @@ section.current-info {
         display: flex;
         flex-direction: column;
         gap: inherit;
+        @include main-shadow();
         > h4 {
           color: colors.$second-text;
           text-transform: capitalize;
