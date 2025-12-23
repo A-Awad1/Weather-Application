@@ -11,8 +11,11 @@ article.daily-forecast {
     }
     div {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
       gap: inherit;
+      @include small {
+        grid-template-columns: repeat(7, 1fr);
+      }
       > div {
         border-radius: $second-border-radius;
         background-color: colors.$main-bg;

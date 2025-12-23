@@ -15,9 +15,11 @@ section.connect-success {
     }
     div.result-info {
       display: grid;
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 18px 0;
       @include large {
         grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
       }
       > div:first-child {
         grid-column: 1/3;

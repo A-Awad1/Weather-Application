@@ -11,10 +11,16 @@ section.current-info {
       @extend %between-flex;
       gap: inherit;
       background: {
-        image: url(/bg-today-large.svg);
+        image: url(/bg-today-small.svg);
         repeat: no-repeat;
         size: cover;
-        position: center;
+        position: 33% 33%;
+      }
+      @include xSmall {
+        background-position: 10% 10%;
+      }
+      @include small {
+        background-image: url(/bg-today-large.svg);
       }
       > div {
         display: flex;
@@ -51,9 +57,13 @@ section.current-info {
     }
     &.detailed-info {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: inherit;
+      @include small {
+        grid-template-columns: repeat(4, 1fr);
+      }
       > div {
+        white-space: nowrap;
         background-color: colors.$main-bg;
         border-radius: $main-border-radius;
         padding: 15px;

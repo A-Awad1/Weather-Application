@@ -4,9 +4,13 @@ article.hourly-forecast {
   padding: 15px 0;
   display: flex;
   flex-direction: column;
-  grid-column: 2 span;
-  height: 140px;
-  gap: 15px;
+  height: 540px;
+  gap: 10px;
+  @include small {
+    grid-column: 2 span;
+    height: 140px;
+    gap: 15px;
+  }
   @include large {
     grid-column: 1 span;
     height: auto;
@@ -33,6 +37,10 @@ article.hourly-forecast {
       padding: 1px 15px;
       display: flex;
       gap: 11px;
+      flex-direction: column;
+      @include small {
+        flex-direction: row;
+      }
       @include large {
         flex-direction: column;
       }
@@ -51,7 +59,10 @@ article.hourly-forecast {
         span {
           font-weight: 500;
           &:last-of-type {
-            margin-left: 13px;
+            margin-left: auto;
+            @include small {
+              margin-left: 13px;
+            }
             @include large {
               margin-left: auto;
             }
