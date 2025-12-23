@@ -28,13 +28,13 @@ html {
           display: flex;
           flex-direction: column;
           padding: {
-            top: 14px;
-            bottom: 14px;
+            top: 15px;
+            bottom: 15px;
           }
           @include medium {
             padding: {
-              top: 18px;
-              bottom: 18px;
+              top: 20px;
+              bottom: 20px;
             }
           }
         }

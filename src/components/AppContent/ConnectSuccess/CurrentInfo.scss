@@ -1,7 +1,7 @@
 section.current-info {
   display: flex;
   flex-direction: column;
-  gap: inherit;
+  gap: 18px;
   > article {
     &.main-info {
       height: 245px;

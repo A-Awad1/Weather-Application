@@ -1,11 +1,11 @@
 section.search-bar {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   @include xSmall {
     justify-content: center;
   }
   @include medium {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
   > form {
     width: 100%;
