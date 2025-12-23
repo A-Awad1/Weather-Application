@@ -4,6 +4,7 @@ section.connect-success {
       width: fit-content;
       text-align: center;
       margin: 30px auto 25px;
+      color: colors.$third-text;
       @include medium {
         margin: 35px auto;
       }

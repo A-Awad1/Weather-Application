@@ -22,6 +22,7 @@ section.current-info {
           flex-direction: column;
           gap: 6px;
           span.location {
+            color: colors.$third-text;
             font: {
               size: 1.7rem;
               weight: 700;
@@ -38,9 +39,10 @@ section.current-info {
             height: 110px;
           }
           span {
+            color: colors.$third-text;
             font: {
               style: italic;
-              weight: 700;
+              weight: 500;
               size: 5.5rem;
             }
           }

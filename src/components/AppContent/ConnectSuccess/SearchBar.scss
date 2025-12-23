@@ -55,7 +55,7 @@ section.search-bar {
           width: 300px;
         }
         @include large {
-          width: 350px;
+          width: 360px;
         }
         &::placeholder {
           color: colors.$second-text;
@@ -68,6 +68,7 @@ section.search-bar {
       text-transform: capitalize;
       transition: $main-transition;
       cursor: pointer;
+      color: colors.$third-text;
       background-color: colors.$blue-light;
       padding: 10px 15px;
       &:hover {
