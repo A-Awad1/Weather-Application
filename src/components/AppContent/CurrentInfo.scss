@@ -39,23 +39,32 @@ section.current-info {
         display: flex;
         &:first-of-type {
           flex-direction: column;
-          align-items: center;
           gap: 6px;
+          max-width: 90%;
+          overflow: hidden;
           @include small {
-            align-items: initial;
+            max-width: 50%;
           }
-          span.location {
-            color: colors.$third-text;
-            font: {
-              size: 1.65rem;
-              weight: 700;
-            }
+          span {
+            text-align: center;
+            @extend %ellipsis;
             @include small {
-              font-size: 1.7rem;
+              text-align: initial;
             }
-          }
-          span.date {
-            color: colors.$second-text;
+            &.location {
+              color: colors.$third-text;
+              font: {
+                size: 1.65rem;
+                weight: 700;
+              }
+              @include small {
+                font-size: 1.7rem;
+                text-align: initial;
+              }
+            }
+            &.date {
+              color: colors.$second-text;
+            }
           }
         }
         &:last-of-type {

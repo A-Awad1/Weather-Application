@@ -8,7 +8,7 @@ export default function AppContent() {
   const success = true;
   if (!success) return <ConnectFailed />;
 
-  const resultStatus = false;
+  const resultStatus = true;
 
   return (
     <section className="app-content">
