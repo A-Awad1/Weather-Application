@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./ConnectFailed.scss";
 
 export default function ConnectFailed() {
   return (
