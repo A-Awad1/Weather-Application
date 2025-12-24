@@ -1,25 +1,21 @@
 import ConnectFailed from "./ConnectFailed";
 import SearchBar from "./SearchBar";
-import CurrentInfo from "./CurrentInfo";
-import DailyForecast from "./DailyForecast";
-import HourlyForecast from "./HourlyForecast";
+import ResultInfo from "./ResultInfo";
+import NoResult from "./NoResult";
 import "./index.scss";
 
 export default function AppContent() {
   const success = true;
   if (!success) return <ConnectFailed />;
 
+  const resultStatus = false;
+
   return (
     <section className="app-content">
       <h2>How's the sky looking today?</h2>
       <SearchBar />
-      <div className="result-info">
-        <div>
-          <CurrentInfo />
-          <DailyForecast />
-        </div>
-        <HourlyForecast />
-      </div>
+      {resultStatus && <ResultInfo />}
+      {!resultStatus && <NoResult />}
     </section>
   );
 }

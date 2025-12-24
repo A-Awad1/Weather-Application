@@ -1,0 +1,9 @@
+p.no-result {
+  @extend %center-flex;
+  padding: 5px;
+  text-align: center;
+  font: {
+    size: 1.5rem;
+    weight: 600;
+  }
+}
