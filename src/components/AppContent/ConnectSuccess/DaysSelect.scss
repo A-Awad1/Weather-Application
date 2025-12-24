@@ -41,15 +41,26 @@ div.days-select {
     z-index: 1;
     position: absolute;
     right: 0;
-    top: calc(100% + 8px);
     background-color: colors.$main-bg;
     border-radius: $second-border-radius;
-    padding: 5px;
     display: flex;
     flex-direction: column;
     gap: 1px;
     width: 160px;
     @include main-shadow();
+    top: calc(100% + 7px);
+    padding: 4px;
+    @include small {
+      top: initial;
+      bottom: calc(100% + 7px);
+    }
+    @include medium {
+      padding: 5px;
+    }
+    @include large {
+      bottom: initial;
+      top: calc(100% + 8px);
+    }
     > li {
       user-select: none;
       border-radius: $third-border-radius;

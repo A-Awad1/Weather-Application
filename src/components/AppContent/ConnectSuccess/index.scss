@@ -3,8 +3,11 @@ section.connect-success {
     h2 {
       width: fit-content;
       text-align: center;
-      margin: 30px auto 25px;
       color: colors.$third-text;
+      margin: 25px auto;
+      @include small {
+        margin: 30px auto;
+      }
       @include medium {
         margin: 35px auto;
       }
@@ -16,7 +19,10 @@ section.connect-success {
     div.result-info {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px 0;
+      gap: 14px 0;
+      @include small {
+        gap: 16px 0;
+      }
       @include large {
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
@@ -26,7 +32,13 @@ section.connect-success {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 25px;
+        gap: 21px;
+        @include small {
+          gap: 23px;
+        }
+        @include large {
+          gap: 25px;
+        }
       }
     }
   }

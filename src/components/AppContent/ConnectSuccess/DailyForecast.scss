@@ -1,7 +1,10 @@
 article.daily-forecast {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 10px;
+  @include medium {
+    gap: 13px;
+  }
   > {
     h3 {
       font: {
@@ -19,16 +22,28 @@ article.daily-forecast {
       > div {
         border-radius: $second-border-radius;
         background-color: colors.$main-bg;
-        padding: 11px 9px;
         @include main-shadow();
         @extend %column-flex;
         gap: inherit;
+        padding: 11px 7px;
+        @include medium {
+          padding: 11px 9px;
+        }
         h4 {
           text-transform: capitalize;
           color: colors.$second-text;
         }
         img {
-          height: 45px;
+          height: 40px;
+          @include small {
+            height: 42px;
+          }
+          @include medium {
+            height: 44px;
+          }
+          @include large {
+            height: 46px;
+          }
         }
         div {
           align-self: stretch;

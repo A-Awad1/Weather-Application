@@ -1,8 +1,11 @@
 section.search-bar {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   @include xSmall {
     justify-content: center;
+  }
+  @include small {
+    margin-bottom: 25px;
   }
   @include medium {
     margin-bottom: 30px;
@@ -11,7 +14,7 @@ section.search-bar {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
     @include xSmall {
       width: auto;
       flex-direction: row;
@@ -33,10 +36,16 @@ section.search-bar {
       }
       label {
         @extend %center-flex;
-        padding-left: 15px;
         cursor: inherit;
+        padding-left: 15px;
         img {
-          width: 17px;
+          width: 15px;
+          @include small {
+            width: 16px;
+          }
+          @include medium {
+            width: 17px;
+          }
         }
       }
       input {
@@ -44,7 +53,7 @@ section.search-bar {
         background-color: transparent;
         border: none;
         flex: 1;
-        padding: 11px 9px;
+        padding: 12px 10px;
         @include xSmall {
           width: 220px;
         }
@@ -70,7 +79,7 @@ section.search-bar {
       cursor: pointer;
       color: colors.$third-text;
       background-color: colors.$blue-light;
-      padding: 10px 15px;
+      padding: 11px 15px;
       &:hover {
         background-color: colors.$blue-base;
       }
