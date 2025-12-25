@@ -20,6 +20,8 @@ article.daily-forecast {
         grid-template-columns: repeat(7, 1fr);
       }
       > div {
+        position: relative;
+        overflow: hidden;
         border-radius: $second-border-radius;
         background-color: colors.$main-bg;
         @include main-shadow();

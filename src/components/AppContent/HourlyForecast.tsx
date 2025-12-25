@@ -1,6 +1,8 @@
 import DaysSelect from "./DaysSelect";
 import "./HourlyForecast.scss";
 
+const pending = false;
+
 const info = [
   {
     hour: "3 PM",
@@ -135,6 +137,7 @@ export default function HourlyForecast() {
         <div>
           {info.map((e) => (
             <div key={e.hour}>
+              {pending && <section className="skeleton"></section>}
               <img src={`/mode-icons/${e.icon}.webp`} alt="icon mode" />
               <span>{e.hour}</span>
               <span>{e.temp}°</span>

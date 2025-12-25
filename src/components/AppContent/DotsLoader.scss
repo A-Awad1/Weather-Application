@@ -1,0 +1,47 @@
+.dots-loader.skeleton {
+  background-image: none;
+  animation: none;
+  @extend %column-flex;
+  justify-content: center;
+  gap: 10px;
+  @include medium {
+    gap: 12px;
+  }
+  > div {
+    @extend %center-flex;
+    gap: 4px;
+    @include medium {
+      gap: 5px;
+    }
+    > span {
+      background-color: colors.$second-text;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.4s ease-in-out infinite both;
+      aspect-ratio: 1/1;
+      width: 10px;
+      @include medium {
+        width: 11px;
+      }
+      &:first-child {
+        animation-delay: -0.32s;
+      }
+      &:nth-child(2) {
+        animation-delay: -0.16s;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+}

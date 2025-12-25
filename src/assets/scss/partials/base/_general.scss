@@ -1,4 +1,5 @@
 @use "../helpers/variables/colors";
+@use "../helpers/placeholders" as *;
 
 ::selection {
   background-color: colors.$gold;
@@ -7,4 +8,29 @@
 
 .nowrap {
   white-space: nowrap;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: inherit;
+  background: {
+    color: colors.$main-bg;
+    image: linear-gradient(90deg, colors.$main-bg 0%, colors.$second-bg 50%, colors.$main-bg 100%);
+    size: 200% 100%;
+  }
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

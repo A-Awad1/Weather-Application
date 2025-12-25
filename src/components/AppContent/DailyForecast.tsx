@@ -1,5 +1,7 @@
 import "./DailyForecast.scss";
 
+const pending = false;
+
 export default function DailyForecast() {
   const info = [
     {
@@ -52,6 +54,7 @@ export default function DailyForecast() {
       <div>
         {info.map((e) => (
           <div key={e.day}>
+            {pending && <section className="skeleton"></section>}
             <h4>{e.day}</h4>
             <img src={`/mode-icons/${e.icon}.webp`} alt="mode icon" />
             <div>

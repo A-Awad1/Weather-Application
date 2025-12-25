@@ -10,9 +10,10 @@ section.current-info {
   }
   > article {
     &.main-info {
+      position: relative;
+      overflow: hidden;
       height: 245px;
       border-radius: $main-border-radius;
-      overflow: hidden;
       @extend %column-flex;
       justify-content: center;
       gap: inherit;
@@ -104,6 +105,8 @@ section.current-info {
         grid-template-columns: repeat(4, 1fr);
       }
       > div {
+        position: relative;
+        overflow: hidden;
         white-space: nowrap;
         background-color: colors.$main-bg;
         border-radius: $main-border-radius;

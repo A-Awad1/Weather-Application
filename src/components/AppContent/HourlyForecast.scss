@@ -60,6 +60,7 @@ article.hourly-forecast {
         gap: 11px;
       }
       > div {
+        position: relative;
         white-space: nowrap;
         background-color: colors.$second-bg;
         border-radius: $third-border-radius;

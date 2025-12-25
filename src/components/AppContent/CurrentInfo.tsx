@@ -1,4 +1,8 @@
 import "./CurrentInfo.scss";
+import DotsLoader from "./DotsLoader";
+
+const pending = false;
+const text = (text: string) => (pending ? `–` : text);
 
 const location = "Berlin, Germany";
 const date = "Tuesday, Aug 5, 2025";
@@ -15,6 +19,7 @@ export default function CurrentInfo() {
   return (
     <section className="current-info">
       <article className="main-info">
+        {pending && <DotsLoader />}
         <div>
           <span className="location">{location}</span>
           <span className="date">{date}</span>
@@ -27,19 +32,19 @@ export default function CurrentInfo() {
       <article className="detailed-info">
         <div>
           <h4>feels like</h4>
-          <span>{feelsLike}°</span>
+          <span>{text(`${feelsLike}°`)}</span>
         </div>
         <div>
           <h4>humidity</h4>
-          <span>{humidity}%</span>
+          <span>{text(`${humidity}%`)}</span>
         </div>
         <div>
           <h4>wind</h4>
-          <span>{wind} km/h</span>
+          <span>{text(`${wind} km/h`)}</span>
         </div>
         <div>
           <h4>precipitation</h4>
-          <span>{precipitation} mm</span>
+          <span>{text(`${precipitation} mm`)}</span>
         </div>
       </article>
     </section>
