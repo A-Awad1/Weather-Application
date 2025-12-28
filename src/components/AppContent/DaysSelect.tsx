@@ -4,6 +4,9 @@ import { weekDays } from "~/utils/constants";
 import type { WeekDay } from "~/types";
 
 export default function HeaderMenu() {
+  const pending = true;
+  const text = (text: string) => (pending ? `–` : text);
+
   const options = weekDays;
   const [selected, setSelected] = useState(options[0]);
 
@@ -25,7 +28,7 @@ export default function HeaderMenu() {
   return (
     <div className="days-select" ref={dropDownRef} tabIndex={0} onBlur={blurMenu}>
       <button type="button" onClick={toggleMenu}>
-        <span>{selected}</span>
+        <span>{text(selected)}</span>
         <img src="/general-icons/icon-dropdown.svg" alt="down arrow" />
       </button>
       <Activity mode={showMenu ? "visible" : "hidden"}>
