@@ -1,50 +1,43 @@
-import "./CurrentInfo.scss";
 import DotsLoader from "./DotsLoader";
-
-const pending = false;
-const text = (text: string) => (pending ? `–` : text);
-
-const location = "Berlin, Germany";
-const date = "Tuesday, Aug 5, 2025";
-const mode = "sunny";
-const icon = `/mode-icons/${mode}.webp`;
-const temp = 20;
-
-const feelsLike = 18;
-const humidity = 46;
-const wind = 14;
-const precipitation = 0;
+import ConditionShow from "./ConditionShow";
+import ModeIcon from "./ModeIcon";
+import { useSelector } from "react-redux";
+import type { RootState } from "~/store";
+import "./CurrentInfo.scss";
 
 export default function CurrentInfo() {
+  const { location } = useSelector((state: RootState) => state.general);
+  const { loading, date, current: data } = useSelector((state: RootState) => state.mainData);
+
   return (
     <section className="current-info">
       <article className="main-info">
-        {pending && <DotsLoader />}
+        {loading && <DotsLoader />}
         <div>
           <span className="location">{location}</span>
-          <span className="date">{date}</span>
+          <span className="date">{date?.format}</span>
         </div>
         <div>
-          <img src={icon} alt="mode icon" />
-          <span>{temp}°</span>
+          <ModeIcon weatherCode={data?.weatherCode} />
+          <ConditionShow sort="temp" value={data?.temperature} />
         </div>
       </article>
       <article className="detailed-info">
         <div>
           <h4>feels like</h4>
-          <span>{text(`${feelsLike}°`)}</span>
+          <ConditionShow sort="temp" value={data?.feelsLike} />
         </div>
         <div>
           <h4>humidity</h4>
-          <span>{text(`${humidity}%`)}</span>
+          <ConditionShow sort="humidity" value={data?.humidity} />
         </div>
         <div>
           <h4>wind</h4>
-          <span>{text(`${wind} km/h`)}</span>
+          <ConditionShow sort="wind" value={data?.wind} />
         </div>
         <div>
           <h4>precipitation</h4>
-          <span>{text(`${precipitation} mm`)}</span>
+          <ConditionShow sort="precipit" value={data?.precipitation} />
         </div>
       </article>
     </section>

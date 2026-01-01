@@ -1,65 +1,29 @@
+import ConditionShow from "./ConditionShow";
+import ModeIcon from "./ModeIcon";
+import { useSelector } from "react-redux";
+import type { RootState } from "~/store";
 import "./DailyForecast.scss";
 
-const pending = false;
+function formatDay(date: string) {
+  const parsedDate = new Date(date);
+  return parsedDate.toLocaleDateString("en-US", { weekday: "short" });
+}
 
 export default function DailyForecast() {
-  const info = [
-    {
-      day: "tue",
-      maxTemp: "20",
-      minTemp: "14",
-      icon: "drizzle",
-    },
-    {
-      day: "wed",
-      maxTemp: "21",
-      minTemp: "15",
-      icon: "rain",
-    },
-    {
-      day: "thu",
-      maxTemp: "24",
-      minTemp: "14",
-      icon: "sunny",
-    },
-    {
-      day: "fri",
-      maxTemp: "25",
-      minTemp: "13",
-      icon: "partly-cloudy",
-    },
-    {
-      day: "sat",
-      maxTemp: "21",
-      minTemp: "15",
-      icon: "storm",
-    },
-    {
-      day: "sun",
-      maxTemp: "25",
-      minTemp: "16",
-      icon: "snow",
-    },
-    {
-      day: "mon",
-      maxTemp: "24",
-      minTemp: "15",
-      icon: "fog",
-    },
-  ];
+  const { loading, daily: data } = useSelector((state: RootState) => state.mainData);
 
   return (
     <article className="daily-forecast">
       <h3>Daily forecast</h3>
       <div>
-        {info.map((e) => (
-          <div key={e.day}>
-            {pending && <section className="skeleton"></section>}
-            <h4>{e.day}</h4>
-            <img src={`/mode-icons/${e.icon}.webp`} alt="mode icon" />
+        {data?.time?.map((e, index) => (
+          <div key={e}>
+            {loading && <section className="skeleton"></section>}
+            <h4>{formatDay(e)}</h4>
+            <ModeIcon weatherCode={data?.weatherCode[index]} />
             <div>
-              <span>{e.maxTemp}°</span>
-              <span>{e.minTemp}°</span>
+              <ConditionShow sort="temp" value={data?.maxTemp[index]} />
+              <ConditionShow sort="temp" value={data?.minTemp[index]} />
             </div>
           </div>
         ))}

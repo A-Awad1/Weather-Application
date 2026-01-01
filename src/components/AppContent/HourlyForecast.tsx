@@ -1,132 +1,34 @@
+import ConditionShow from "./ConditionShow";
 import DaysSelect from "./DaysSelect";
+import ModeIcon from "./ModeIcon";
+import { useSelector } from "react-redux";
+import type { RootState } from "~/store";
 import "./HourlyForecast.scss";
 
-const pending = false;
+function formatTime(date: string): string {
+  const time = date.split("T")[1];
+  const hours = Number(time.split(":")[0]);
+  const period = hours >= 12 ? "PM" : "AM";
+  const displayHour = hours % 12 || 12;
 
-const info = [
-  {
-    hour: "3 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "4 PM",
-    temp: "20",
-    icon: "partly-cloudy",
-  },
-  {
-    hour: "5 PM",
-    temp: "20",
-    icon: "sunny",
-  },
-  {
-    hour: "6 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "7 PM",
-    temp: "20",
-    icon: "storm",
-  },
-  {
-    hour: "8 PM",
-    temp: "20",
-    icon: "snow",
-  },
-  {
-    hour: "9 PM",
-    temp: "20",
-    icon: "snow",
-  },
-  {
-    hour: "10 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "11 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "12 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "1 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "2 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "3 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "4 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "5 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "6 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "7 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "8 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "9 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "10 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "11 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "12 AM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "1 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-  {
-    hour: "2 PM",
-    temp: "20",
-    icon: "overcast",
-  },
-];
+  return `${displayHour} ${period}`;
+}
 
 export default function HourlyForecast() {
+  const {
+    selectedDay,
+    date,
+    loading: firstLoading,
+    hourly: firstData,
+  } = useSelector((state: RootState) => state.mainData);
+
+  const { loading: changeLoading, hourly: changedData } = useSelector(
+    (state: RootState) => state.hourlyData
+  );
+
+  const loading = firstLoading || changeLoading;
+  const data = selectedDay === date.dayName ? firstData : changedData;
+
   return (
     <article className="hourly-forecast">
       <div className="head">
@@ -135,12 +37,12 @@ export default function HourlyForecast() {
       </div>
       <div className="body">
         <div>
-          {info.map((e) => (
-            <div key={e.hour}>
-              {pending && <section className="skeleton"></section>}
-              <img src={`/mode-icons/${e.icon}.webp`} alt="icon mode" />
-              <span>{e.hour}</span>
-              <span>{e.temp}°</span>
+          {data?.time?.map((e, index) => (
+            <div key={e}>
+              {loading && <section className="skeleton"></section>}
+              <ModeIcon weatherCode={data?.weatherCode[index]} />
+              <span>{formatTime(e)}</span>
+              <ConditionShow sort="temp" value={data?.temperature[index]} />
             </div>
           ))}
         </div>

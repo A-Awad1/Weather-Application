@@ -25,3 +25,56 @@ export type WeekDay =
   | "wednesday"
   | "thursday"
   | "friday";
+
+export type Error = Record<string, unknown>;
+
+type EmptyRecord = Record<string, never>;
+
+interface DateInfo {
+  iso: string;
+  format: string;
+  dayName: string;
+}
+
+interface CurrentWeather {
+  weatherCode: number;
+  temperature: number;
+  feelsLike: number;
+  humidity: number;
+  wind: number;
+  precipitation: number;
+}
+
+interface DailyWeather {
+  time: string[];
+  weatherCode: number[];
+  maxTemp: number[];
+  minTemp: number[];
+}
+
+interface HourlyWeather {
+  time: string[];
+  weatherCode: number[];
+  temperature: number[];
+}
+
+export interface GeneralState {
+  lat: number;
+  lng: number;
+  location: string;
+}
+
+export interface MainDataState {
+  loading: boolean;
+  error: Error;
+  date: DateInfo | EmptyRecord;
+  current: CurrentWeather | EmptyRecord;
+  daily: DailyWeather | EmptyRecord;
+  hourly: HourlyWeather | EmptyRecord;
+  selectedDay: string;
+}
+export interface HourlyDataState {
+  loading: boolean;
+  error: Error;
+  hourly: HourlyWeather | EmptyRecord;
+}
