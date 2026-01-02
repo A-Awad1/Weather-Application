@@ -20,7 +20,12 @@ export const getMainData = createAsyncThunk(
   async ({ lat, lng }: { lat: number; lng: number }) => {
     const api = `${baseURL}?latitude=${lat}&longitude=${lng}&timezone=${timezone}&forecast_days=${forecast_days}&forecast_hours=${forecast_hours}&current=${current}&daily=${daily}&hourly=${hourly}`;
 
-    return await fetch(api).then((res) => res.json());
+    const [data] = await Promise.all([
+      fetch(api).then((res) => res.json()),
+      new Promise((resolve) => setTimeout(resolve, 500)),
+    ]);
+
+    return data;
   }
 );
 
@@ -29,6 +34,11 @@ export const getHourlyData = createAsyncThunk(
   async ({ lat, lng, date }: { lat: number; lng: number; date: string }) => {
     const api = `${baseURL}?latitude=${lat}&longitude=${lng}&timezone=${timezone}&hourly=${hourly}&start_date=${date}&end_date=${date}`;
 
-    return await fetch(api).then((res) => res.json());
+    const [data] = await Promise.all([
+      fetch(api).then((res) => res.json()),
+      new Promise((resolve) => setTimeout(resolve, 500)),
+    ]);
+
+    return data;
   }
 );

@@ -4,7 +4,7 @@ import type { MainDataState, Error } from "~/types";
 import { getReadableDate, getDayName } from "~/utils/methods";
 
 const initialState: MainDataState = {
-  loading: false,
+  loading: true,
   error: {},
   date: {},
   current: {},

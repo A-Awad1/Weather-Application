@@ -3,7 +3,7 @@ import { getHourlyData } from "../thunkMethods";
 import type { HourlyDataState, Error } from "~/types";
 
 const initialState: HourlyDataState = {
-  loading: false,
+  loading: true,
   error: {},
   hourly: {},
 };

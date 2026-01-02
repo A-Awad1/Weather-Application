@@ -14,12 +14,13 @@ export default function HourlyForecast() {
     hourly: firstData,
   } = useSelector((state: RootState) => state.mainData);
 
-  const { loading: changeLoading, hourly: changedData } = useSelector(
+  const { loading: changedLoading, hourly: changedData } = useSelector(
     (state: RootState) => state.hourlyData
   );
 
-  const loading = firstLoading || changeLoading;
-  const data = selectedDay === date.dayName ? firstData : changedData;
+  const isCurrentDay = selectedDay === date.dayName;
+  const loading = isCurrentDay ? firstLoading : changedLoading;
+  const data = isCurrentDay ? firstData : changedData;
 
   return (
     <article className="hourly-forecast">

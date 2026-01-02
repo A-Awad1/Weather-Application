@@ -8,7 +8,11 @@ import { getHourlyData } from "~/store/thunkMethods";
 import { getFullWeek } from "~/utils/methods";
 
 export default function DaysSelect() {
-  const { date: currentDate, selectedDay } = useSelector((state: RootState) => state.mainData);
+  const {
+    loading,
+    date: currentDate,
+    selectedDay,
+  } = useSelector((state: RootState) => state.mainData);
   const dispatch = useDispatch<AppDispatch>();
 
   const week = getFullWeek(currentDate?.iso);
@@ -35,7 +39,7 @@ export default function DaysSelect() {
   return (
     <div className="days-select" ref={dropDownRef} tabIndex={0} onBlur={blurMenu}>
       <button type="button" onClick={toggleMenu}>
-        <span>{selectedDay}</span>
+        <span>{loading ? `–` : selectedDay}</span>
         <img src="/general-icons/icon-dropdown.svg" alt="down arrow" />
       </button>
       <Activity mode={showMenu ? "visible" : "hidden"}>
