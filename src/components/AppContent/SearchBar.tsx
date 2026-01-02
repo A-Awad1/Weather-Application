@@ -1,9 +1,8 @@
 import "./SearchBar.scss";
 import { type MouseEvent, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { type AppDispatch } from "~/store";
+import type { AppDispatch, RootState } from "~/store";
 import { getMainData } from "~/store/thunkMethods";
-import type { RootState } from "~/store";
 
 export default function SearchBar() {
   const { lat, lng } = useSelector((state: RootState) => state.general);
@@ -13,9 +12,9 @@ export default function SearchBar() {
     dispatch(getMainData({ lat, lng }));
   }, [lat, lng]);
 
-  function search(e: MouseEvent<HTMLButtonElement>) {
+  const search = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <section className="search-bar">
