@@ -27,6 +27,7 @@ article.daily-forecast {
         @include main-shadow();
         @extend %column-flex;
         gap: inherit;
+        justify-content: space-between;
         padding: 11px 7px;
         @include medium {
           padding: 11px 9px;
