@@ -20,7 +20,10 @@ export default function DaysSelect() {
   const dropDownRef = useRef<HTMLDivElement>(null);
   const [showMenu, setShowMenu] = useState(false);
   const closeMenu = () => setShowMenu(false);
-  const toggleMenu = () => setShowMenu((prev) => !prev);
+  const toggleMenu = () => {
+    if (loading) return;
+    setShowMenu((prev) => !prev);
+  };
   const blurMenu = (event: FocusEvent<HTMLDivElement>) => {
     const target = event.relatedTarget;
     if (!target || !dropDownRef.current?.contains(target)) closeMenu();
