@@ -9,8 +9,8 @@ function Skeleton() {
   const boxes = Array.from({ length: 7 }, () => null);
   return (
     <>
-      {boxes.map(() => (
-        <div>
+      {boxes.map((_, i) => (
+        <div key={i}>
           <section className="skeleton"></section>
           <h4>-</h4>
           <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
