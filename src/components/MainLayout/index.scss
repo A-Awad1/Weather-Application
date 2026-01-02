@@ -39,3 +39,8 @@ html {
     }
   }
 }
+
+::selection {
+  background-color: colors.$gold;
+  color: colors.$white;
+}

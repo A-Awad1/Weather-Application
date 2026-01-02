@@ -1,14 +1,4 @@
 @use "../helpers/variables/colors";
-@use "../helpers/placeholders" as *;
-
-::selection {
-  background-color: colors.$gold;
-  color: colors.$white;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
 
 .skeleton {
   position: absolute;
