@@ -78,6 +78,10 @@ article.hourly-forecast {
           border-radius: $second-border-radius;
         }
         @include main-shadow(1);
+        &:has(> .skeleton) {
+          min-width: 115px;
+          justify-content: center;
+        }
         img {
           width: 30px;
           @include large {

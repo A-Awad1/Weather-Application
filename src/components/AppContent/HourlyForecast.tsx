@@ -6,6 +6,20 @@ import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
 import { get12Hour } from "~/utils/methods";
 
+function Skeleton() {
+  const boxes = Array.from({ length: 8 }, () => null);
+  return (
+    <>
+      {boxes.map((_, i) => (
+        <div key={i}>
+          <section className="skeleton"></section>
+          <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
+        </div>
+      ))}
+    </>
+  );
+}
+
 export default function HourlyForecast() {
   const {
     selectedDay,
@@ -30,14 +44,17 @@ export default function HourlyForecast() {
       </div>
       <div className="body">
         <div>
-          {data?.time?.map((e, index) => (
-            <div key={e}>
-              {loading && <section className="skeleton"></section>}
-              <ModeIcon weatherCode={data?.weatherCode[index]} />
-              <span>{get12Hour(e)}</span>
-              <ConditionShow sort="temp" value={data?.temperature[index]} />
-            </div>
-          ))}
+          {loading ? (
+            <Skeleton />
+          ) : (
+            data?.time?.map((e, index) => (
+              <div key={e}>
+                <ModeIcon weatherCode={data?.weatherCode[index]} />
+                <span>{get12Hour(e)}</span>
+                <ConditionShow sort="temp" value={data?.temperature[index]} />
+              </div>
+            ))
+          )}
         </div>
       </div>
     </article>
