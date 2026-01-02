@@ -3,11 +3,7 @@ import ConditionShow from "./ConditionShow";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
-
-function formatDay(date: string) {
-  const parsedDate = new Date(date);
-  return parsedDate.toLocaleDateString("en-US", { weekday: "short" });
-}
+import { getDayName } from "~/utils/methods";
 
 export default function DailyForecast() {
   const { loading, daily: data } = useSelector((state: RootState) => state.mainData);
@@ -19,7 +15,7 @@ export default function DailyForecast() {
         {data?.time?.map((e, index) => (
           <div key={e}>
             {loading && <section className="skeleton"></section>}
-            <h4>{formatDay(e)}</h4>
+            <h4>{getDayName(e, "short")}</h4>
             <ModeIcon weatherCode={data?.weatherCode[index]} />
             <div>
               <ConditionShow sort="temp" value={data?.maxTemp[index]} />

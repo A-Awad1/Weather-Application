@@ -17,14 +17,10 @@ export interface MenuOption {
   value: Unit[keyof Unit];
 }
 
-export type WeekDay =
-  | "saturday"
-  | "sunday"
-  | "monday"
-  | "tuesday"
-  | "wednesday"
-  | "thursday"
-  | "friday";
+export interface WeekDay {
+  day: string;
+  date: string;
+}
 
 export type Error = Record<string, unknown>;
 

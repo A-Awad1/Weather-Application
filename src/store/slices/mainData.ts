@@ -1,23 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getMainData } from "../thunkMethods";
 import type { MainDataState, Error } from "~/types";
-
-function formatDate(date: string): string {
-  const parsedDate = new Date(date);
-  if (isNaN(parsedDate.getTime())) return "";
-  return new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  }).format(parsedDate);
-}
-
-function getDayName(date: string): string {
-  const parsedDate = new Date(date);
-  if (isNaN(parsedDate.getTime())) return "";
-  return parsedDate.toLocaleDateString("en-US", { weekday: "long" });
-}
+import { getReadableDate, getDayName } from "~/utils/methods";
 
 const initialState: MainDataState = {
   loading: false,
@@ -60,7 +44,7 @@ export const mainDataSlice = createSlice({
       state.selectedDay = dayName;
       state.date = {
         iso: date,
-        format: formatDate(date),
+        format: getReadableDate(date),
         dayName,
       };
 

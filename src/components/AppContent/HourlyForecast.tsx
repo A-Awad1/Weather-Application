@@ -4,15 +4,7 @@ import DaysSelect from "./DaysSelect";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
-
-function formatTime(date: string): string {
-  const time = date.split("T")[1];
-  const hours = Number(time.split(":")[0]);
-  const period = hours >= 12 ? "PM" : "AM";
-  const displayHour = hours % 12 || 12;
-
-  return `${displayHour} ${period}`;
-}
+import { get12Hour } from "~/utils/methods";
 
 export default function HourlyForecast() {
   const {
@@ -41,7 +33,7 @@ export default function HourlyForecast() {
             <div key={e}>
               {loading && <section className="skeleton"></section>}
               <ModeIcon weatherCode={data?.weatherCode[index]} />
-              <span>{formatTime(e)}</span>
+              <span>{get12Hour(e)}</span>
               <ConditionShow sort="temp" value={data?.temperature[index]} />
             </div>
           ))}

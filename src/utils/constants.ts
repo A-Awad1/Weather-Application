@@ -1,4 +1,4 @@
-import type { Unit, UnitSystem, WeekDay } from "~/types";
+import type { Unit, UnitSystem } from "~/types";
 
 export const metric: Unit = {
   system: "metric",
@@ -20,13 +20,3 @@ export const unitSystems: Record<UnitSystem, Unit> = {
   metric,
   imperial,
 };
-
-export const weekDays: WeekDay[] = [
-  "saturday",
-  "sunday",
-  "monday",
-  "tuesday",
-  "wednesday",
-  "thursday",
-  "friday",
-];

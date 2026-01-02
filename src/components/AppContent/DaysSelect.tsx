@@ -1,34 +1,17 @@
 import "./DaysSelect.scss";
 import { useState, useRef, Activity, type FocusEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import type { WeekDay } from "~/types";
 import type { RootState, AppDispatch } from "~/store";
 import { changeSelectedDay } from "~/store/slices/mainData";
 import { getHourlyData } from "~/store/thunkMethods";
-
-interface WeekDay {
-  day: string;
-  date: string;
-}
-
-const getWeek = (startDate: string): WeekDay[] => {
-  const parsedDate = new Date(startDate);
-  if (isNaN(parsedDate.getTime())) return [];
-
-  return Array.from({ length: 7 }, (_, index) => {
-    const date = new Date(parsedDate);
-    date.setDate(date.getDate() + index);
-    return {
-      day: date.toLocaleDateString("en-US", { weekday: "long" }),
-      date: date.toISOString().split("T")[0],
-    };
-  });
-};
+import { getFullWeek } from "~/utils/methods";
 
 export default function DaysSelect() {
   const { date: currentDate, selectedDay } = useSelector((state: RootState) => state.mainData);
   const dispatch = useDispatch<AppDispatch>();
 
-  const week = getWeek(currentDate?.iso);
+  const week = getFullWeek(currentDate?.iso);
 
   const dropDownRef = useRef<HTMLDivElement>(null);
   const [showMenu, setShowMenu] = useState(false);
