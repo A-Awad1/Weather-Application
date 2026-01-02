@@ -1,9 +1,9 @@
+import "./DaysSelect.scss";
 import { useState, useRef, Activity, type FocusEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "~/store";
 import { changeSelectedDay } from "~/store/slices/mainData";
 import { getHourlyData } from "~/store/thunkMethods";
-import "./DaysSelect.scss";
 
 interface WeekDay {
   day: string;

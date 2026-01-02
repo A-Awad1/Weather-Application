@@ -1,8 +1,8 @@
+import "./index.scss";
 import ConnectFailed from "./ConnectFailed";
 import SearchBar from "./SearchBar";
 import ResultInfo from "./ResultInfo";
 import NoResult from "./NoResult";
-import "./index.scss";
 
 export default function AppContent() {
   const success = true;

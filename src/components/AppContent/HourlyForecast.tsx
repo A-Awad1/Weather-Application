@@ -1,9 +1,9 @@
+import "./HourlyForecast.scss";
 import ConditionShow from "./ConditionShow";
 import DaysSelect from "./DaysSelect";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
-import "./HourlyForecast.scss";
 
 function formatTime(date: string): string {
   const time = date.split("T")[1];

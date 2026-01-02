@@ -1,8 +1,8 @@
+import "./DailyForecast.scss";
 import ConditionShow from "./ConditionShow";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
-import "./DailyForecast.scss";
 
 function formatDay(date: string) {
   const parsedDate = new Date(date);

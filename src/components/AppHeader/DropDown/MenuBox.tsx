@@ -1,10 +1,10 @@
+import "./MenuBox.scss";
 import type { FormEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { MenuOption as Props } from "~/types";
 import type { RootState } from "~/store/index";
 import { changeAllUnits } from "~/store/slices/units";
 import MenuOption from "./MenuOption";
-import "./MenuBox.scss";
 
 const options: Record<string, Props> = {
   "temp-celsius": {

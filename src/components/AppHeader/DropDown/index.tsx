@@ -1,6 +1,6 @@
+import "./index.scss";
 import { useState, useRef, useEffect, Activity, type MouseEvent } from "react";
 import MenuBox from "./MenuBox";
-import "./index.scss";
 
 export default function HeaderMenu() {
   const [showMenu, setShowMenu] = useState(false);

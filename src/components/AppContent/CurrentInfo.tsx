@@ -1,9 +1,9 @@
+import "./CurrentInfo.scss";
 import DotsLoader from "./DotsLoader";
 import ConditionShow from "./ConditionShow";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
-import "./CurrentInfo.scss";
 
 export default function CurrentInfo() {
   const { location } = useSelector((state: RootState) => state.general);

@@ -1,9 +1,9 @@
+import "./MenuOption.scss";
 import type { RootState } from "../../../store/index";
 import type { ChangeEvent } from "react";
 import type { MenuOption, UnitPayload } from "~/types";
 import { useSelector, useDispatch } from "react-redux";
 import { changeUnit } from "../../../store/slices/units";
-import "./MenuOption.scss";
 
 export default function MenuOptions({ text, name, id, value }: MenuOption) {
   const units = useSelector((state: RootState) => state.units);

@@ -1,5 +1,5 @@
-import DropDown from "./DropDown";
 import "./index.scss";
+import DropDown from "./DropDown";
 
 export default function AppHeader() {
   return (

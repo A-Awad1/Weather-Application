@@ -1,9 +1,9 @@
+import "./SearchBar.scss";
 import { type MouseEvent, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { type AppDispatch } from "~/store";
 import { getMainData } from "~/store/thunkMethods";
 import type { RootState } from "~/store";
-import "./SearchBar.scss";
 
 export default function SearchBar() {
   const { lat, lng } = useSelector((state: RootState) => state.general);
