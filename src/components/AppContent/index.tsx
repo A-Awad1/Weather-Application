@@ -3,10 +3,12 @@ import ConnectFailed from "./ConnectFailed";
 import SearchBar from "./SearchBar";
 import ResultInfo from "./ResultInfo";
 import NoResult from "./NoResult";
+import { useSelector } from "react-redux";
+import type { RootState } from "~/store";
 
 export default function AppContent() {
-  const success = true;
-  if (!success) return <ConnectFailed />;
+  const { error } = useSelector((state: RootState) => state.mainData);
+  if (error?.message) return <ConnectFailed />;
 
   const resultStatus = true;
 
