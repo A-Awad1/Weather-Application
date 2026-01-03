@@ -24,6 +24,7 @@ export const mainDataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getMainData.pending, (state) => {
       state.loading = true;
+      state.error = {};
     });
     builder.addCase(getMainData.rejected, (state, action) => {
       state.loading = false;
