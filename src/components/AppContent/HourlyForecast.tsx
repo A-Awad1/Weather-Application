@@ -51,7 +51,7 @@ export default function HourlyForecast() {
               <div key={e}>
                 <ModeIcon weatherCode={data?.weatherCode[index]} />
                 <span>{get12Hour(e)}</span>
-                <ConditionShow sort="temp" value={data?.temperature[index]} />
+                <ConditionShow sort="temperature" value={data?.temperature[index]} />
               </div>
             ))
           )}

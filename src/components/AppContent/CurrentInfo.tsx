@@ -19,13 +19,13 @@ export default function CurrentInfo() {
         </div>
         <div>
           <ModeIcon weatherCode={data?.weatherCode} />
-          <ConditionShow sort="temp" value={data?.temperature} />
+          <ConditionShow sort="temperature" value={data?.temperature} />
         </div>
       </article>
       <article className="detailed-info">
         <div>
           <h4>feels like</h4>
-          <ConditionShow sort="temp" value={data?.feelsLike} />
+          <ConditionShow sort="temperature" value={data?.feelsLike} />
         </div>
         <div>
           <h4>humidity</h4>
@@ -33,11 +33,11 @@ export default function CurrentInfo() {
         </div>
         <div>
           <h4>wind</h4>
-          <ConditionShow sort="wind" value={data?.wind} />
+          <ConditionShow sort="windSpeed" value={data?.wind} />
         </div>
         <div>
           <h4>precipitation</h4>
-          <ConditionShow sort="precipit" value={data?.precipitation} />
+          <ConditionShow sort="precipitation" value={data?.precipitation} />
         </div>
       </article>
     </section>

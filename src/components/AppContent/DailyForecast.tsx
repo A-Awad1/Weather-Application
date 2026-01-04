@@ -39,8 +39,8 @@ export default function DailyForecast() {
               <h4>{getDayName(e, "short")}</h4>
               <ModeIcon weatherCode={data?.weatherCode[index]} />
               <div>
-                <ConditionShow sort="temp" value={data?.maxTemp[index]} />
-                <ConditionShow sort="temp" value={data?.minTemp[index]} />
+                <ConditionShow sort="temperature" value={data?.maxTemp[index]} />
+                <ConditionShow sort="temperature" value={data?.minTemp[index]} />
               </div>
             </div>
           ))
