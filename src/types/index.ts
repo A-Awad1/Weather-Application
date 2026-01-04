@@ -55,9 +55,10 @@ interface HourlyWeather {
 }
 
 export interface GeneralState {
-  lat: number;
-  lng: number;
-  location: string;
+  lat: number | null;
+  lng: number | null;
+  location: string | null;
+  resultError: string | null;
 }
 
 export interface MainDataState {

@@ -6,8 +6,11 @@ import { getMainData } from "~/store/thunkMethods";
 export default function ConnectFailed() {
   const { lat, lng } = useSelector((state: RootState) => state.general);
   const dispatch = useDispatch<AppDispatch>();
-  const retry = () => dispatch(getMainData({ lat, lng }));
-  
+  const retry = () => {
+    if (lat === null || lng === null) return;
+    dispatch(getMainData({ lat, lng }));
+  }
+
   return (
     <section className="connect-failed">
       <div>

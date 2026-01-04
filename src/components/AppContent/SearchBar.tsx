@@ -11,6 +11,7 @@ export default function SearchBar() {
 
   const search = (e: ChangeEvent<HTMLInputElement>) => {
     e?.preventDefault?.();
+    if (lat === null || lng === null) return;
     dispatch(getMainData({ lat, lng }));
   };
 

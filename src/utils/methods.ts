@@ -39,3 +39,53 @@ export function getFullWeek(startDate: string): WeekDay[] {
     };
   });
 }
+
+export async function getCoords(): Promise<{ lat: number; lng: number }> {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject(
+        "Geolocation is not supported by your browser. Please try another browser or search about your city from input field."
+      );
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        resolve({ lat: latitude, lng: longitude });
+      },
+      () => {
+        reject(
+          `There is an error in geolocation. Please try again or search about your city from input field.`
+        );
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+    );
+  });
+}
+
+export async function getAddress(
+  lat: number,
+  lng: number,
+  language: string = "en"
+): Promise<string> {
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&accept-language=${language}`;
+
+  const response = await fetch(url, { headers: { "User-Agent": "Weather Application" } });
+
+  if (!response.ok) return "";
+
+  const data = await response.json();
+
+  const fullAddress = data?.display_name || null;
+  const country = data?.address?.country || null;
+  const cityKeys = ["state", "city", "town", "village", "municipality", "hamlet"];
+  const cityKey = cityKeys.find((e) => data?.address?.[e]);
+  const city = cityKey ? data?.address?.[cityKey] : null;
+
+  if (city && country) return `${city}, ${country}`;
+  if (fullAddress) return fullAddress;
+  if (city) return city;
+  if (country) return country;
+  return "";
+}
