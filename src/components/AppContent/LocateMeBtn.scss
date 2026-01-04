@@ -1,0 +1,17 @@
+button.locate-me {
+  border: none;
+  border-radius: $second-border-radius;
+  text-transform: capitalize;
+  transition: $main-transition;
+  cursor: pointer;
+  color: colors.$third-text;
+  background-color: colors.$blue-light;
+  padding: 11px 15px;
+  white-space: nowrap;
+  &:hover {
+    background-color: colors.$blue-base;
+  }
+  &:focus {
+    @include focus-shadow(colors.$blue-light, colors.$blue-dark, 1);
+  }
+}
