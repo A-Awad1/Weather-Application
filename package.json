@@ -16,7 +16,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
-    "sass": "^1.96.0"
+    "sass": "^1.96.0",
+    "world-cities-json": "^1.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
