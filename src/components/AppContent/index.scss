@@ -1,19 +1,60 @@
 section.app-content {
-  > {
-    h2 {
-      width: fit-content;
-      text-align: center;
-      color: colors.$third-text;
-      margin: 25px auto;
-      @include small {
-        margin: 30px auto;
+  > h2 {
+    width: fit-content;
+    text-align: center;
+    color: colors.$third-text;
+    margin: 25px auto;
+    @include small {
+      margin: 30px auto;
+    }
+    @include medium {
+      margin: 35px auto;
+    }
+    font: {
+      size: 2.4rem;
+      family: $second-font;
+    }
+  }
+  > section.search-bar {
+    display: flex;
+    margin-bottom: 22px;
+    @include xSmall {
+      justify-content: center;
+    }
+    @include small {
+      margin-bottom: 25px;
+    }
+    @include medium {
+      margin-bottom: 30px;
+    }
+    > form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      @include xSmall {
+        width: auto;
+        flex-direction: row;
       }
       @include medium {
-        margin: 35px auto;
+        gap: 10px;
       }
-      font: {
-        size: 2.4rem;
-        family: $second-font;
+      button.locate-me {
+        border: none;
+        border-radius: $second-border-radius;
+        text-transform: capitalize;
+        transition: $main-transition;
+        cursor: pointer;
+        color: colors.$third-text;
+        background-color: colors.$blue-light;
+        padding: 11px 15px;
+        white-space: nowrap;
+        &:hover {
+          background-color: colors.$blue-base;
+        }
+        &:focus {
+          @include focus-shadow(colors.$blue-light, colors.$blue-dark, 1);
+        }
       }
     }
   }

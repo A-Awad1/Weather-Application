@@ -1,14 +1,42 @@
 import "./index.scss";
 import ConnectFailed from "./ConnectFailed";
-import SearchBar from "./SearchBar";
+import InputSearch from "./InputSearch";
 import ResultInfo from "./ResultInfo";
 import ResultError from "./ResultError";
-import { useSelector } from "react-redux";
-import type { RootState } from "~/store";
+import { type MouseEvent, useEffect, useState } from "react";
+import { getAddress, getCoords } from "~/utils/methods";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "~/store";
+import { setResultError, updatePlace } from "~/store/slices/general";
+import { getMainData } from "~/store/thunkMethods";
 
 export default function AppContent() {
   const { error } = useSelector((state: RootState) => state.mainData);
   const { resultError } = useSelector((state: RootState) => state.general);
+
+  const [pending, setPending] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+
+  const locateMe = async (e?: MouseEvent<HTMLButtonElement>) => {
+    e?.preventDefault();
+    setPending(true);
+    dispatch(setResultError(null));
+
+    try {
+      const { lat, lng } = await getCoords();
+      const location = await getAddress(lat, lng);
+      dispatch(updatePlace({ lat, lng, location }));
+      dispatch(getMainData({ lat, lng }));
+    } catch (error) {
+      dispatch(setResultError(error as string));
+    } finally {
+      setPending(false);
+    }
+  };
+
+  useEffect(() => {
+    locateMe();
+  }, []);
 
   return (
     <>
@@ -17,7 +45,14 @@ export default function AppContent() {
       ) : (
         <section className="app-content">
           <h2>How's the sky looking today?</h2>
-          <SearchBar />
+          <section className="search-bar">
+            <form>
+              <InputSearch />
+              <button className="locate-me" disabled={pending} onClick={locateMe}>
+                {pending ? "Locating... " : "Locate Me"}
+              </button>
+            </form>
+          </section>
           {resultError ? <ResultError /> : <ResultInfo />}
         </section>
       )}
