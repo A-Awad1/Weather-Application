@@ -1,4 +1,5 @@
 div.input-search {
+  position: relative;
   display: flex;
   border-radius: $second-border-radius;
   background-color: colors.$main-bg;
@@ -47,6 +48,74 @@ div.input-search {
     }
     &::placeholder {
       color: colors.$second-text;
+    }
+  }
+  .drop-down {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 7px);
+    padding-top: 5px;
+    border-radius: inherit;
+    background-color: colors.$main-bg;
+    @include main-shadow();
+    overflow: hidden;
+    z-index: 3;
+    @include large {
+      top: calc(100% + 10px);
+    }
+    > ul {
+      max-height: 200px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      padding: 5px {
+        top: 0;
+      }
+      > li {
+        > {
+          button {
+            width: 100%;
+            padding: 8px;
+            cursor: pointer;
+            border: none;
+            border-radius: $third-border-radius;
+            background-color: transparent;
+            transition: $main-transition;
+            @extend %between-flex;
+            gap: 10px;
+            &:hover,
+            &:focus-visible {
+              background-color: colors.$second-bg;
+            }
+            span {
+              text-align: left;
+              &:first-of-type {
+                font-size: 0.98rem;
+                line-height: 1.15;
+              }
+              &:last-of-type {
+                color: colors.$second-text;
+                font-size: 0.85em;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+    > button.load-more {
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      background-color: colors.$second-bg;
+      transition: $main-transition;
+      padding: 8px;
+      &:hover,
+      &:focus-visible {
+        color: colors.$second-text;
+      }
     }
   }
 }
