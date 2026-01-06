@@ -1,5 +1,5 @@
 import "~/assets/scss/main.scss";
-// import { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "normalize.css";
 import App from "./App.tsx";
@@ -9,9 +9,9 @@ import { Provider } from "react-redux";
 const root = document.getElementById("root")!;
 
 createRoot(root).render(
-  // <StrictMode>
-  // </StrictMode>
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>
 );

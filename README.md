@@ -42,13 +42,10 @@ This project uses the [Open-Meteo API](https://open-meteo.com/) to fetch weather
 
 **Example endpoint:** `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true`
 
-<!-- 
+<!--
 ## Data Sources & Attributions
 
-- **City Data**: City search functionality uses [world-cities-json](https://npm.io/package/world-cities-json) package, which contains data from the SimpleMaps World Cities Database created by Jet Set Expert. This data is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). 
--->
 
-<!--
 ## Deployment Link
 
 **[Live Application]()**
