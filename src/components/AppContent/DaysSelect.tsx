@@ -36,6 +36,7 @@ export default function DaysSelect() {
     if (day === selectedDay) return;
     dispatch(changeSelectedDay(day));
     if (day === currentDate.dayName) return;
+    if (lat === null || lng === null) return;
     dispatch(getHourlyData({ lat, lng, date }));
   };
 
