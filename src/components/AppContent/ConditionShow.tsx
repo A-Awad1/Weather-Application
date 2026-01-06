@@ -11,7 +11,7 @@ export default function ConditionShow({ sort, value }: Props) {
   const units = useSelector((state: RootState) => state.units);
 
   const format = (value: number, unit: string, float: boolean = false): string => {
-    if (float) return `${value === 0 ? 0 : value.toFixed(1)}${unit}`;
+    if (float) return `${value === 0 ? 0 : value?.toFixed(1)}${unit}`;
     return `${Math.round(value)}${unit}`;
   };
 

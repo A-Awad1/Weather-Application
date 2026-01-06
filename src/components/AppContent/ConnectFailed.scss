@@ -40,26 +40,33 @@ section.connect-failed {
         padding: 0 10px;
       }
     }
-    button {
-      @extend %center-flex;
-      background-color: colors.$main-bg;
-      border-radius: $third-border-radius;
-      border: none;
-      text-transform: capitalize;
-      cursor: pointer;
-      transition: $main-transition;
-      padding: 8px 10px;
-      gap: 6px;
-      &:hover {
-        background-color: colors.$second-bg;
+    div {
+      display: flex;
+      gap: 5px;
+      @include medium {
+        gap: 10px;
       }
-      &:focus {
-        @include focus-shadow();
-      }
-      img {
-        height: 11px;
-        @include medium {
-          height: 13px;
+      button {
+        @extend %center-flex;
+        background-color: colors.$main-bg;
+        border-radius: $third-border-radius;
+        border: none;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: $main-transition;
+        padding: 8px 10px;
+        gap: 6px;
+        &:hover {
+          background-color: colors.$second-bg;
+        }
+        &:focus {
+          @include focus-shadow();
+        }
+        img {
+          height: 11px;
+          @include medium {
+            height: 13px;
+          }
         }
       }
     }

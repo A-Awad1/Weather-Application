@@ -11,15 +11,20 @@ import { setResultError, updatePlace } from "~/store/slices/general";
 import { getMainData } from "~/store/thunkMethods";
 
 export default function AppContent() {
-  const { error } = useSelector((state: RootState) => state.mainData);
-  const { resultError } = useSelector((state: RootState) => state.general);
-
-  const [pending, setPending] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
 
+  const { error, loading, current, daily, hourly } = useSelector(
+    (state: RootState) => state.mainData
+  );
+
+  const noData = !loading && [current, daily, hourly].every((e) => Object.keys(e).length === 0);
+
+  const { resultError } = useSelector((state: RootState) => state.general);
+
+  const [locatePending, setLocatePending] = useState(false);
   const locateMe = async (e?: MouseEvent<HTMLButtonElement>) => {
     e?.preventDefault();
-    setPending(true);
+    setLocatePending(true);
     dispatch(setResultError(null));
 
     try {
@@ -30,7 +35,7 @@ export default function AppContent() {
     } catch (error) {
       dispatch(setResultError(error as string));
     } finally {
-      setPending(false);
+      setLocatePending(false);
     }
   };
 
@@ -48,12 +53,12 @@ export default function AppContent() {
           <section className="search-bar">
             <form>
               <InputSearch />
-              <button className="locate-me" disabled={pending} onClick={locateMe}>
-                {pending ? "Locating... " : "Locate Me"}
+              <button className="locate-me" disabled={locatePending} onClick={locateMe}>
+                {locatePending ? "Locating... " : "Locate Me"}
               </button>
             </form>
           </section>
-          {resultError ? <ResultError /> : <ResultInfo />}
+          {resultError ? <ResultError /> : noData ? <></> : <ResultInfo />}
         </section>
       )}
     </>

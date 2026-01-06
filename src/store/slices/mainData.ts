@@ -20,6 +20,15 @@ export const mainDataSlice = createSlice({
     changeSelectedDay: (state, action) => {
       state.selectedDay = action.payload;
     },
+    resetData: (state) => {
+      state.loading = false;
+      state.error = {};
+      state.date = {};
+      state.current = {};
+      state.daily = {};
+      state.hourly = {};
+      state.selectedDay = "";
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMainData.pending, (state) => {
@@ -36,7 +45,7 @@ export const mainDataSlice = createSlice({
     builder.addCase(getMainData.fulfilled, (state, action) => {
       state.loading = false;
       state.error = {};
-
+      
       const { current, daily, hourly } = action.payload;
 
       const date = current.time.split("T")[0];
@@ -78,5 +87,5 @@ export const mainDataSlice = createSlice({
   },
 });
 
-export const { changeSelectedDay } = mainDataSlice.actions;
+export const { changeSelectedDay, resetData } = mainDataSlice.actions;
 export default mainDataSlice.reducer;
