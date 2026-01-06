@@ -60,7 +60,7 @@ div.input-search {
     background-color: colors.$main-bg;
     @include main-shadow();
     overflow: hidden;
-    z-index: 3;
+    z-index: 2;
     @include large {
       top: calc(100% + 10px);
     }
