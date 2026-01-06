@@ -1,6 +1,7 @@
 import "./index.scss";
 import AppContent from "../AppContent";
 import AppHeader from "../AppHeader";
+import AppFooter from "../AppFooter";
 
 export default function MainLayout() {
   return (
@@ -9,6 +10,7 @@ export default function MainLayout() {
         <AppHeader />
         <AppContent />
       </div>
+      <AppFooter />
     </section>
   );
 }

@@ -1,0 +1,103 @@
+footer.app-footer {
+  box-shadow: 0 -2px 2px 0 rgba(colors.$white, 0.05);
+  padding: 15px 0;
+  @include medium {
+    padding: 20px 0;
+  }
+  > .container {
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      @include medium {
+        gap: 15px;
+      }
+      h3 {
+        color: colors.$gold;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font: {
+          size: 1rem;
+          weight: 500;
+        }
+        &::after {
+          content: ":";
+        }
+        img {
+          height: 18px;
+          margin-right: 5px;
+        }
+      }
+      a {
+        color: inherit;
+        border-bottom: 1px solid currentColor;
+        transition: $main-transition;
+        white-space: nowrap;
+        &:hover {
+          color: colors.$third-text;
+        }
+      }
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        &.challenge-info {
+          align-items: center;
+          justify-content: space-between;
+          row-gap: inherit;
+          column-gap: 30px;
+          > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+        }
+        &.attributions {
+          flex-direction: column;
+          gap: 10px;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-left: 1px;
+            li {
+              display: flex;
+              align-items: flex-start;
+              img {
+                height: 18px;
+                margin-right: 5px;
+              }
+              div {
+                display: flex;
+                gap: 2px 5px;
+                color: colors.$second-text;
+                font-size: 0.96rem;
+                span {
+                  color: colors.$main-text;
+                  font-weight: 500;
+                  white-space: nowrap;
+                  &::after {
+                    content: ":";
+                  }
+                }
+                p {
+                  line-height: 1.45;
+                  text-wrap: balance;
+                }
+              }
+              &:last-of-type {
+                div {
+                  flex-direction: column;
+                }
+                a {
+                  white-space: initial;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

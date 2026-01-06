@@ -21,17 +21,17 @@ html {
     font-family: $main-font;
     main#root {
       section.layout {
-        div.container {
+        > div.container {
           display: flex;
           flex-direction: column;
           padding: {
             top: 15px;
-            bottom: 15px;
+            bottom: 20px;
           }
           @include medium {
             padding: {
               top: 20px;
-              bottom: 20px;
+              bottom: 30px;
             }
           }
         }
