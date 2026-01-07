@@ -1,8 +1,8 @@
 # Weather Application
 
-<!-- ## Deployment Link
+## Deployment Link
 
-**[Live Application]()** -->
+**[Live Application](https://my-live-weather.netlify.app/)**
 
 ## Overview
 
@@ -39,8 +39,12 @@ It's a responsive weather application built with React.js that allows users to g
 
 - [Open-Meteo.com](https://open-meteo.com/) is used to fetch weather data from its API.
 - [OpenStreetMap](https://www.openstreetmap.org/copyright) is used to obtain the address by latitude and longitude (after determining the geographical location) using [nominatim openstreetmap api](https://nominatim.openstreetmap.org/)
-- [world-cities-json](https://npm.io/package/world-cities-json) is used to obtain the address by searching for a city from the input field  
-  [world-cities-json](https://npm.io/package/world-cities-json) depending on [SimpleMaps World Cities Database](https://simplemaps.com/data/world-cities) owned by Pareto Software, LLC and licensed under [the Creative Commons Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/)
+- [world-cities-json](https://npm.io/package/world-cities-json) is used to obtain the address by searching for a city from the input field.  
+  It depends on [SimpleMaps World Cities Database](https://simplemaps.com/data/world-cities) owned by Pareto Software, LLC and licensed under [the Creative Commons Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/)
+
+## Coded by
+
+**[Ahmed Awad](https://www.linkedin.com/in/ahmedawad123/)**
 
 ## Prerequisites
 
@@ -115,20 +119,16 @@ yarn preview
 bun run preview
 ```
 
-## Coded by
-
-**[Linkedin Profile](https://www.linkedin.com/in/ahmedawad123/)**
-
 ## Output design Screenshots:
 
-Large Screen:
+Large Screen:  
 ![Output](/output-screens/large.png)
 
-Large Screen with drop down:
+Large Screen with drop down:  
 ![Output](/output-screens/large-drop-down.png)
 
-Medium Screen:
+Medium Screen:  
 ![Output](/output-screens/medium.png)
 
-Mobile Screen:
+Mobile Screen:  
 ![Output](/output-screens/small.png)
