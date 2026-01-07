@@ -36,7 +36,7 @@ article.daily-forecast {
           text-transform: capitalize;
           color: colors.$second-text;
         }
-        img {
+        .mode-icon {
           height: 40px;
           @include small {
             height: 42px;

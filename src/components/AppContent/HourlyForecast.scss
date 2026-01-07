@@ -82,7 +82,7 @@ article.hourly-forecast {
           min-width: 115px;
           justify-content: center;
         }
-        img {
+        .mode-icon {
           width: 30px;
           @include large {
             width: 34px;

@@ -13,7 +13,9 @@ function Skeleton() {
       {boxes.map((_, i) => (
         <div key={i}>
           <section className="skeleton"></section>
-          <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
+          <div className="mode-icon">
+            <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
+          </div>
         </div>
       ))}
     </>

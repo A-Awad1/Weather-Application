@@ -13,7 +13,9 @@ function Skeleton() {
         <div key={i}>
           <section className="skeleton"></section>
           <h4>-</h4>
-          <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
+          <div className="mode-icon">
+            <img src="/general-icons/icon-loading.svg" alt="loading Icon" />
+          </div>
           <div>
             <span>-</span>
             <span>-</span>

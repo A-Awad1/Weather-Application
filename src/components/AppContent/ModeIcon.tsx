@@ -1,3 +1,4 @@
+import "./ModeIcon.scss";
 interface ModeIcon {
   icon: string;
   codes: number[];
@@ -21,5 +22,9 @@ function specifyIcon(code: number): string {
 
 export default function ModeIcon({ weatherCode }: { weatherCode: number }) {
   const icon = specifyIcon(weatherCode);
-  return <img src={`/mode-icons/${icon}.webp`} alt="mode icon" />;
+  return (
+    <div className="mode-icon">
+      <img src={`/mode-icons/${icon}.webp`} alt="mode icon" />
+    </div>
+  );
 }

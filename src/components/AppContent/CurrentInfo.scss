@@ -71,7 +71,7 @@ section.current-info {
         &:last-of-type {
           align-items: center;
           gap: inherit;
-          img {
+          .mode-icon {
             height: 80px;
             @include small {
               height: 90px;
