@@ -4,7 +4,7 @@ interface ModeIcon {
   codes: number[];
 }
 
-function specifyIcon(code: number): string {
+function specifyIcon(code: number): string | null {
   const icons: ModeIcon[] = [
     { icon: "sunny", codes: [0, 1] },
     { icon: "cloudy", codes: [2] },
@@ -17,7 +17,7 @@ function specifyIcon(code: number): string {
   ];
 
   const match = icons.find((e) => e.codes.includes(code));
-  return match?.icon || "unknown";
+  return match?.icon || null;
 }
 
 export default function ModeIcon({
@@ -28,9 +28,12 @@ export default function ModeIcon({
   onReady?: () => void;
 }) {
   const icon = specifyIcon(weatherCode);
+
   return (
     <div className="mode-icon">
-      <img src={`/mode-icons/${icon}.webp`} alt="mode icon" onLoad={() => onReady?.()} />
+      {icon ? (
+        <img src={`/mode-icons/${icon}.webp`} alt="mode icon" onLoad={() => onReady?.()} />
+      ) : null}
     </div>
   );
 }
