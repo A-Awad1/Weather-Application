@@ -4,7 +4,6 @@ import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
 import { getDayName } from "~/utils/methods";
-import { useState } from "react";
 
 function Skeleton() {
   const boxes = Array.from({ length: 7 }, () => null);
