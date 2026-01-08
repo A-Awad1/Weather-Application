@@ -28,11 +28,7 @@ function Skeleton() {
 }
 
 export default function DailyForecast() {
-  const { loading: dataLoading, daily: data } = useSelector((state: RootState) => state.mainData);
-
-  const [iconLoad, setIconLoad] = useState(true);
-  const finishIconLoad = () => setIconLoad(false);
-  const loading = dataLoading || iconLoad;
+  const { loading, daily: data } = useSelector((state: RootState) => state.mainData);
 
   return (
     <article className="daily-forecast">
@@ -44,7 +40,7 @@ export default function DailyForecast() {
           data?.time?.map((e, index) => (
             <div key={e}>
               <h4>{getDayName(e, "short")}</h4>
-              <ModeIcon weatherCode={data?.weatherCode[index]} onReady={finishIconLoad} />
+              <ModeIcon weatherCode={data?.weatherCode[index]} />
               <div>
                 <ConditionShow sort="temperature" value={data?.maxTemp[index]} />
                 <ConditionShow sort="temperature" value={data?.minTemp[index]} />
