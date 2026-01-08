@@ -20,11 +20,17 @@ function specifyIcon(code: number): string {
   return match?.icon || "unknown";
 }
 
-export default function ModeIcon({ weatherCode }: { weatherCode: number }) {
+export default function ModeIcon({
+  weatherCode,
+  onReady,
+}: {
+  weatherCode: number;
+  onReady?: () => void;
+}) {
   const icon = specifyIcon(weatherCode);
   return (
     <div className="mode-icon">
-      <img src={`/mode-icons/${icon}.webp`} alt="mode icon" />
+      <img src={`/mode-icons/${icon}.webp`} alt="mode icon" onLoad={() => onReady?.()} />
     </div>
   );
 }

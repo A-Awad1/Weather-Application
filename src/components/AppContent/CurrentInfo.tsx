@@ -4,10 +4,19 @@ import ConditionShow from "./ConditionShow";
 import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
+import { useState } from "react";
 
 export default function CurrentInfo() {
   const { location } = useSelector((state: RootState) => state.general);
-  const { loading, date, current: data } = useSelector((state: RootState) => state.mainData);
+  const {
+    loading: dataLoading,
+    date,
+    current: data,
+  } = useSelector((state: RootState) => state.mainData);
+
+  const [iconLoad, setIconLoad] = useState(true);
+
+  const loading = dataLoading || iconLoad;
 
   return (
     <section className="current-info">
@@ -18,7 +27,7 @@ export default function CurrentInfo() {
           <span className="date">{date?.format}</span>
         </div>
         <div>
-          <ModeIcon weatherCode={data?.weatherCode} />
+          <ModeIcon weatherCode={data?.weatherCode} onReady={() => setIconLoad(false)} />
           <ConditionShow sort="temperature" value={data?.temperature} />
         </div>
       </article>
