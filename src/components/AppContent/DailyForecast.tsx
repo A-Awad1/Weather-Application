@@ -4,6 +4,7 @@ import ModeIcon from "./ModeIcon";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/store";
 import { getDayName } from "~/utils/methods";
+import { useState } from "react";
 
 function Skeleton() {
   const boxes = Array.from({ length: 7 }, () => null);
@@ -27,7 +28,11 @@ function Skeleton() {
 }
 
 export default function DailyForecast() {
-  const { loading, daily: data } = useSelector((state: RootState) => state.mainData);
+  const { loading: dataLoading, daily: data } = useSelector((state: RootState) => state.mainData);
+
+  const [iconLoad, setIconLoad] = useState(true);
+  const finishIconLoad = () => setIconLoad(false);
+  const loading = dataLoading || iconLoad;
 
   return (
     <article className="daily-forecast">
@@ -39,7 +44,7 @@ export default function DailyForecast() {
           data?.time?.map((e, index) => (
             <div key={e}>
               <h4>{getDayName(e, "short")}</h4>
-              <ModeIcon weatherCode={data?.weatherCode[index]} />
+              <ModeIcon weatherCode={data?.weatherCode[index]} onReady={finishIconLoad} />
               <div>
                 <ConditionShow sort="temperature" value={data?.maxTemp[index]} />
                 <ConditionShow sort="temperature" value={data?.minTemp[index]} />

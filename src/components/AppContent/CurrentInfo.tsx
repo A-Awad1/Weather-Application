@@ -15,7 +15,7 @@ export default function CurrentInfo() {
   } = useSelector((state: RootState) => state.mainData);
 
   const [iconLoad, setIconLoad] = useState(true);
-
+  const readyIcon = () => setIconLoad(false);
   const loading = dataLoading || iconLoad;
 
   return (
@@ -27,7 +27,7 @@ export default function CurrentInfo() {
           <span className="date">{date?.format}</span>
         </div>
         <div>
-          <ModeIcon weatherCode={data?.weatherCode} onReady={() => setIconLoad(false)} />
+          <ModeIcon weatherCode={data?.weatherCode} onReady={readyIcon} />
           <ConditionShow sort="temperature" value={data?.temperature} />
         </div>
       </article>
