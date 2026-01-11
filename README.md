@@ -121,6 +121,9 @@ bun run preview
 
 ## Output design Screenshots:
 
+Mobile Show:  
+![Output](/output-screens/mobile.png)
+
 Large Screen:  
 ![Output](/output-screens/large.png)
 
@@ -130,5 +133,5 @@ Large Screen with drop down:
 Medium Screen:  
 ![Output](/output-screens/medium.png)
 
-Mobile Screen:  
+small Screen:
 ![Output](/output-screens/small.png)
