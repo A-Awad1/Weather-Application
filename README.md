@@ -133,5 +133,5 @@ Large Screen with drop down:
 Medium Screen:  
 ![Output](/output-screens/medium.png)
 
-small Screen:
+small Screen:  
 ![Output](/output-screens/small.png)
