@@ -2,7 +2,7 @@
 
 ## Deployment Link
 
-**[Live Application](https://my-live-weather.netlify.app/)**
+**[Live Application](https://weather.web-net.workers.dev/)**
 
 ## Overview
 
